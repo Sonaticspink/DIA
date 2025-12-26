@@ -1,26 +1,25 @@
-/* Gradient Background */
-.login-background {
+.signup-background {
     --background: linear-gradient(to bottom, #ffe4f0 0%, #ffffff 100%);
 }
 
-.login-container {
+.signup-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    padding: 20px;
+    min-height: 100%;
+    padding: 20px 20px 40px 20px;
 }
 
 .logo-section {
-    width: 180px;
-    margin-bottom: 20px;
+    width: 150px; /* Slightly smaller to fit more inputs on screen */
+    margin-bottom: 15px;
 }
 
-.login-title {
+.signup-title {
     color: #4a4a4a;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .input-group {
@@ -28,25 +27,22 @@
     max-width: 320px;
 }
 
-/* Rounded, light pink inputs */
 .custom-input {
     --background: #fce4ec;
     --border-radius: 12px;
     --padding-start: 15px;
-    margin-bottom: 15px;
-    min-height: 50px;
+    margin-bottom: 12px;
+    min-height: 45px;
     border: 1px solid #f8bbd0;
+    font-size: 0.9rem;
 }
 
-.forgot-password {
-    text-align: right;
-    font-size: 0.8rem;
-    color: #888;
-    margin-top: -10px;
-    margin-bottom: 30px;
+.button-group {
+    width: 100%;
+    max-width: 320px;
+    margin-top: 10px;
 }
 
-/* Bright pink buttons */
 .main-button {
     --background: #ff69b4;
     --background-activated: #ff1493;
@@ -54,22 +50,16 @@
     --box-shadow: none;
     height: 50px;
     font-size: 1.1rem;
-    margin-bottom: 10px;
-}
-
-.button-group {
-    width: 100%;
-    max-width: 320px;
 }
 
 .footer-text {
-    margin-top: 50px;
+    margin-top: 30px;
     font-size: 0.9rem;
     color: #666;
 }
 
-.register-link {
+.login-link {
     color: #ff69b4;
     font-weight: bold;
-    cursor: pointer;
+    text-decoration: none;
 }

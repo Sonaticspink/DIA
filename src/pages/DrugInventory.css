@@ -1,0 +1,51 @@
+.inventory-header {
+    --background: #fce4ec;
+}
+
+.search-container {
+    background: #ffffff;
+    padding: 10px;
+}
+
+.custom-search {
+    --background: #fce4ec;
+    --border-radius: 20px;
+}
+
+.drug-card {
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: none;
+    border: 1px solid #fce4ec;
+}
+
+.image-wrapper {
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: white;
+}
+
+.drug-name-label {
+    background: #fce4ec;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    color: #666;
+}
+
+.pagination .active {
+    background: #333;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 5px;
+}

@@ -1,0 +1,46 @@
+.dashboard-toolbar {
+    --background: #fce4ec; /* Light pink header */
+    --color: black;
+    padding-top: 10px;
+}
+
+.dashboard-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.user-avatar {
+    margin-right: 15px;
+    border: 2px solid #ff1493;
+}
+
+.dashboard-content {
+    --background: #ffffff;
+}
+
+.button-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    height: 80%; /* Centers buttons vertically */
+}
+
+.dash-button {
+    --background: #ff69b4;
+    --background-activated: #ff1493;
+    --border-radius: 40px;
+    --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 80%;
+    height: 70px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* Style for the icons inside buttons */
+.dash-button ion-icon {
+    font-size: 2rem;
+    margin-right: 10px;
+}
