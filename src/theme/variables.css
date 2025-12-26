@@ -1,2 +1,40 @@
-/* For information on how to create your own theme, please refer to:
-http://ionicframework.com/docs/theming/ */
+/* Styling the theme to match your images */
+:root {
+  --ion-color-primary: #ff829d; /* The pink color in your UI */
+  --ion-color-primary-contrast: #ffffff;
+}
+
+.queue-card {
+  background: linear-gradient(135deg, #ff8fa3 0%, #ff6b81 100%);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.appointment-card {
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(255, 130, 157, 0.1);
+  margin: 0;
+}
+
+.custom-input {
+  --background: #fdfdfd;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.time-slot {
+  --border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+.confirm-btn {
+  --border-radius: 12px;
+  margin-top: 20px;
+  height: 50px;
+}

@@ -1,0 +1,65 @@
+/* General Layout */
+.section-title {
+  font-weight: bold;
+  color: #ff829d;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+/* Home Screen - Pink Queue Card */
+.queue-card {
+  background: linear-gradient(135deg, #ff8fa3 0%, #ff6b81 100%);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(255, 107, 129, 0.3);
+}
+
+.appointment-card {
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin: 0;
+}
+
+/* Medicine Screen */
+.medicine-card {
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.med-image {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Booking Screen */
+.custom-input {
+  --background: #fdfdfd;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  padding: 5px 10px;
+}
+
+.time-slot {
+  --border-radius: 10px;
+  --padding-start: 0;
+  --padding-end: 0;
+}
+
+.confirm-btn {
+  --border-radius: 15px;
+  --background: #ff829d;
+  height: 55px;
+  margin-top: 25px;
+  font-weight: bold;
+}
