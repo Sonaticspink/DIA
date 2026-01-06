@@ -1,30 +1,70 @@
+/* Container to help the calendar stand out */
 .calendar-container {
     display: flex;
     justify-content: center;
     padding: 20px 10px;
-    background: #f4f5f8;
+    background: #f4f5f8; /* Light grey background to create contrast with the white calendar */
     border-radius: 20px;
     margin: 10px;
 }
 
+/* The actual Calendar Card */
 .react-calendar {
     width: 100%;
     max-width: 450px;
-    background-color: #ffffff !important;
-    border: 2px solid #e0e0e0 !important;
+    background-color: #ffffff !important; /* Force white background */
+    color: #222; /* Dark text for readability */
+    border: 2px solid #e0e0e0 !important; /* Visible border */
     border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Strong shadow for depth */
     padding: 15px;
+    font-family: 'Inter', sans-serif;
 }
 
+/* High Contrast for Navigation (Month/Year buttons) */
+.react-calendar__navigation button {
+    color: var(--ion-color-primary, #3880ff);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Styling the Days */
+.react-calendar__month-view__days__day {
+    color: #333 !important;
+    font-weight: 500;
+}
+
+/* High Contrast for Selected Date */
 .react-calendar__tile--active {
-    background: var(--ion-color-primary) !important;
+    background: var(--ion-color-primary, #3880ff) !important;
     color: white !important;
     border-radius: 12px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(56, 128, 255, 0.4);
 }
 
-.hint-text {
-    text-align: center;
-    color: #888;
-    margin-top: 20px;
+/* Hover effect */
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+    background-color: #e8f0fe;
+    border-radius: 12px;
+    color: var(--ion-color-primary);
+}
+
+/* Weekend colors to stand out */
+.react-calendar__month-view__days__day--weekend {
+    color: #d91e18 !important; /* Red for Sundays/Saturdays */
+}
+
+/* Styling the appointment list below */
+.appointment-list {
+    margin-top: 25px;
+}
+
+.appt-card {
+    --background: #ffffff;
+    margin-bottom: 12px;
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
+    --padding-start: 15px;
 }

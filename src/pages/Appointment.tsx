@@ -12,12 +12,18 @@ const Appointment: React.FC = () => {
   const [value, setValue] = useState(new Date());
   const history = useHistory();
 
-  const handleDateClick = (selectedDate: Date) => {
-    setValue(selectedDate);
-    // Convert date to string (YYYY-MM-DD) to pass in URL
-    const dateStr = selectedDate.toISOString().split('T')[0];
-    history.push(`/appointment-detail/${dateStr}`);
-  };
+const handleDateClick = (selectedDate: Date) => {
+  setValue(selectedDate);
+
+  // FIX: Extract local date components manually to avoid UTC deduction
+  const year = selectedDate.getFullYear();
+  const month = String(selectedDate.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+  const day = String(selectedDate.getDate()).padStart(2, '0');
+  
+  const dateStr = `${year}-${month}-${day}`; // Format: YYYY-MM-DD
+  
+  history.push(`/appointment-detail/${dateStr}`);
+};
 
   return (
     <IonPage>
