@@ -26,7 +26,7 @@ const Dashboard: React.FC = () => {
             บันทึก
           </IonButton>
 
-          <IonButton expand="block" className="dash-button">
+          <IonButton routerLink="/appointment" expand="block" className="dash-button">
             <IonIcon slot="start" icon={calendar} />
             การนัดหมาย
           </IonButton>

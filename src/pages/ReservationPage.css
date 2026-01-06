@@ -1,0 +1,26 @@
+.input-box-container {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.custom-input {
+    --background: #f9f9f9;
+    --border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    margin-top: 5px;
+}
+
+.input-header {
+    font-weight: bold;
+    border-left: 4px solid var(--ion-color-primary);
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+.confirm-btn {
+    margin-top: 20px;
+    height: 55px;
+}

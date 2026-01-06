@@ -1,0 +1,25 @@
+.detail-header-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.thai-date-display {
+    color: var(--ion-color-primary);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.slot-button {
+    --border-radius: 12px;
+    height: 60px;
+    font-weight: 600;
+}
+
+.slot-button.booked {
+    --background: #e0e0e0;
+    --color: #999;
+}

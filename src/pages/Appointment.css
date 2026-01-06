@@ -1,0 +1,30 @@
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px;
+    background: #f4f5f8;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.react-calendar {
+    width: 100%;
+    max-width: 450px;
+    background-color: #ffffff !important;
+    border: 2px solid #e0e0e0 !important;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+}
+
+.react-calendar__tile--active {
+    background: var(--ion-color-primary) !important;
+    color: white !important;
+    border-radius: 12px;
+}
+
+.hint-text {
+    text-align: center;
+    color: #888;
+    margin-top: 20px;
+}
