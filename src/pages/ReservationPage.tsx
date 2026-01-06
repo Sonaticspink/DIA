@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   IonContent, IonHeader, IonPage, IonTitle, IonToolbar, 
-  IonButtons, IonBackButton, IonItem, IonLabel, IonList, IonButton, 
+  IonButtons, IonBackButton, IonItem, IonLabel, IonList, IonButton,IonImg,
   IonIcon, IonInput, IonTextarea, IonListHeader
 } from '@ionic/react';
 import { useParams, useHistory } from 'react-router-dom';
@@ -29,7 +29,7 @@ const handleConfirm = () => {
 
   return (
     <IonPage>
-      <IonHeader>
+      <IonHeader translucent>
         <IonToolbar color="primary">
           <IonButtons slot="start">
             <IonBackButton />
@@ -38,10 +38,16 @@ const handleConfirm = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent className="ion-padding gray-bg">
+      <IonContent fullscreen className="ion-padding Reservation-background">
+
+         {/* Logo Section */}
+          <div className="logo-section">
+            <IonImg src="/assets/logo.png" className="app-logo" />
+          </div>
+
         {/* Summary Card */}
         <div className="reservation-card">
-          <div className="status-badge">สรุปรายละเอียด</div>
+          <div className="status-badge">รายละเอียดวันและเวลาที่ทำการจอง</div>
           <p className="summary-text">
             <IonIcon icon={calendarOutline} /> {thaiDate} <br/>
             <IonIcon icon={timeOutline} /> เวลา {time} น.
@@ -78,7 +84,7 @@ const handleConfirm = () => {
           </div>
 
           <div className="input-item">
-            <IonLabel position="stacked">หมายเหตุ (ถ้ามี)</IonLabel>
+            <IonLabel position="stacked">อาการป่วยเบื้องต้น</IonLabel>
             <IonItem lines="none" className="custom-input">
               <IonIcon icon={documentTextOutline} slot="start" />
               <IonTextarea 

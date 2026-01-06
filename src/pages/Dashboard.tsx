@@ -12,7 +12,7 @@ const Dashboard: React.FC = () => {
     <IonPage>
       <IonHeader className="ion-no-border">
         <IonToolbar className="dashboard-toolbar">
-          <IonTitle className="dashboard-title">สวัสดีวันจันทร์</IonTitle>
+          <IonTitle className="dashboard-title">สวัสดีปกป้อง</IonTitle>
           <IonAvatar slot="end" className="user-avatar">
             <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="user" />
           </IonAvatar>

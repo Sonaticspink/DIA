@@ -1,3 +1,6 @@
+.success-background {
+    --background: linear-gradient(to bottom, #ffe4f0 0%, #ffffff 100%);
+}
 .success-container {
     display: flex;
     flex-direction: column;
@@ -7,14 +10,19 @@
     text-align: center;
 }
 
+.success-logo{
+    width: 150px; /* Slightly smaller to fit more inputs on screen */
+    margin-bottom: 15px;
+}
+
 .big-check {
-    font-size: 100px;
+    font-size: 150px;
     margin-bottom: 15px;
 }
 
 .receipt-summary {
-    width: 90%;
-    background: #f8f9fa;
+    width: 60%;
+    background: #ffffff;
     border-radius: 15px;
     padding: 20px;
     margin: 30px 0;
