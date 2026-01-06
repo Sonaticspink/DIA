@@ -14,7 +14,7 @@ const DrugInventory: React.FC = () => {
   }, []);
 
   const fetchDrugs = async () => {
-    const { data, error } = await supabase.from('drug_inventory').select('*');
+    const { data, error } = await supabase.from('medicines').select('*');
     if (!error && data) setDrugs(data);
   };
 
