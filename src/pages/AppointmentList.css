@@ -1,0 +1,31 @@
+.list-card {
+    --background: #ffffff;
+    margin-bottom: 12px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.patient-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #000;
+}
+
+.appt-info {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+.appt-note {
+    font-style: italic;
+    color: #888;
+    font-size: 0.85rem;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
