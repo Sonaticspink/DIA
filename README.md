@@ -3,6 +3,7 @@
 1.npm install -g @ionic/cli
 2.npm install date-fns
 3.npm install @supabase/supabase-js
+4.npm install react-calendar
 ลอง test ด้วย
 ionic serve
 ```
