@@ -7,6 +7,7 @@ import {
 import { useParams, useHistory } from 'react-router-dom';
 import { calendarOutline, timeOutline, personCircleOutline, callOutline, documentTextOutline } from 'ionicons/icons';
 import './ReservationPage.css'
+import { supabase } from '../supabaseClient';
 
 const ReservationPage: React.FC = () => {
   const { date, time } = useParams<{ date: string, time: string }>();
@@ -23,8 +24,25 @@ const ReservationPage: React.FC = () => {
     weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
   });
 
-const handleConfirm = () => {
-  history.push(`/success/${date}/${time}`);
+const handleConfirm = async () => {
+  const { data, error } = await supabase
+    .from('appointments') // Your table name
+    .insert([
+      { 
+        appointment_date: date, 
+        appointment_time: time, 
+        patient_name: formData.name, 
+        patient_phone: formData.phone, 
+        note: formData.note 
+      }
+    ])
+    .select();
+
+  if (error) {
+    alert("เกิดข้อผิดพลาด: " + error.message);
+  } else {
+    history.push(`/success/${date}/${time}`);
+  }
 };
 
   return (

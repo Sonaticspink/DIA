@@ -3,6 +3,8 @@ import {
   IonContent, IonHeader, IonPage, IonTitle, IonToolbar, 
   IonButtons, IonBackButton, IonGrid, IonRow, IonCol, IonButton
 } from '@ionic/react';
+import { listOutline } from 'ionicons/icons';
+import { IonIcon } from '@ionic/react';
 import { useParams } from 'react-router-dom';
 import './AppointmentDetail.css'
 import { useHistory } from 'react-router-dom';
@@ -43,6 +45,11 @@ const AppointmentDetail: React.FC = () => {
             <IonBackButton defaultHref="/appointment" />
           </IonButtons>
           <IonTitle>เลือกเวลาจอง</IonTitle>
+          <IonButtons slot="end">
+      <IonButton routerLink="/appointment-list">
+        <IonIcon icon={listOutline} slot="icon-only" />
+      </IonButton>
+    </IonButtons>
         </IonToolbar>
       </IonHeader>
 

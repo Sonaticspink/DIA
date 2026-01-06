@@ -3,8 +3,16 @@ http://ionicframework.com/docs/theming/ */
 :root {
   --ion-color-primary: #FFD8EE;
   --ion-color-primary-rgb: 255, 216, 238;
+<<<<<<< HEAD
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 0, 0, 0;
   --ion-color-primary-shade: #f0c6d9;
   --ion-color-primary-tint: #ffe0f2;
 }
+=======
+  --ion-color-primary-contrast: #000000;
+  --ion-color-primary-contrast-rgb: 0, 0, 0;
+  --ion-color-primary-shade: #f0c6d9;
+  --ion-color-primary-tint: #ffe0f2;
+}
+>>>>>>> 78c927865b7d2b20d0daf388bfb506d41965cd60
