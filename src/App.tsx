@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import DrugInventory from './pages/DrugInventory';
+import DrugDetail from './pages/DrugDetail';
 import Appointment from './pages/Appointment';
 import AppointmentDetail from './pages/AppointmentDetail';
 import ReservationPage from './pages/ReservationPage';
@@ -47,6 +48,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/inventory">
           <DrugInventory />
+        </Route>
+        <Route exact path="/drug-detail/:id">
+          <DrugDetail /> 
         </Route>
         <Route exact path="/appointment-list">
           <AppointmentList />

@@ -1,0 +1,94 @@
+.drug-detail-content {
+    --background: #f4f7f9;
+}
+
+.image-container {
+    width: 100%;
+    height: 300px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-container ion-img {
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.detail-card {
+    background: white;
+    border-radius: 30px 30px 0 0;
+    margin-top: -30px;
+    padding: 30px 20px;
+    min-height: 100%;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+}
+
+.header-section {
+    margin-bottom: 25px;
+}
+
+.drug-name {
+    font-size: 26px;
+    font-weight: 800;
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+}
+
+.badge {
+    background: #e3f2fd;
+    color: #1976d2;
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.info-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-items: flex-start;
+}
+
+.icon-wrapper {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.icon-wrapper.usage { background: #fff4e5; color: #ff9800; }
+.icon-wrapper.detail { background: #e8f5e9; color: #4caf50; }
+.icon-wrapper.warning { background: #ffebee; color: #f44336; }
+
+.info-text h3 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #34495e;
+}
+
+.info-text p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #7f8c8d;
+}
+
+.warning-title {
+    color: #f44336 !important;
+}
+
+.info-item.warning {
+    background: #fff5f5;
+    padding: 15px;
+    border-radius: 15px;
+}
