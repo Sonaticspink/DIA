@@ -23,14 +23,14 @@
 
 /* High Contrast for Navigation (Month/Year buttons) */
 .react-calendar__navigation button {
-    color: var(--ion-color-primary, #3880ff);
+    color: #c00083ff !important;
     font-weight: bold;
     font-size: 1.1rem;
 }
 
 /* Styling the Days */
 .react-calendar__month-view__days__day {
-    color: #333 !important;
+    color: #ff5ae6ff !important;
     font-weight: 500;
 }
 

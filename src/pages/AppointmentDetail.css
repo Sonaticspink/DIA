@@ -1,25 +1,70 @@
+:root {
+  --ion-color-primary: #FFD8EE;
+  --ion-color-primary-rgb: 255, 216, 238;
+  --ion-color-primary-contrast: #000000;
+  --ion-color-primary-contrast-rgb: 0, 0, 0;
+  --ion-color-primary-shade: #f0c6d9;
+  --ion-color-primary-tint: #ffe0f2;
+}
+
+
 .detail-header-card {
-    background: #ffffff;
+  background: #ff6fb5ff;
     padding: 25px;
     border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(255, 98, 183, 0.25);
     margin-bottom: 20px;
     text-align: center;
 }
 
+.thai-label {
+    color: #7a1f52;
+    font-weight: 500;
+}
+
 .thai-date-display {
-    color: var(--ion-color-primary);
+    color: #ffffff;
     font-size: 1.4rem;
     font-weight: bold;
+
+}
+
+.slot-button.available {
+    --border-color: #FF62B7;
+    --color: #FF62B7;
+    --background-hover: #FF62B7;
+    --color-hover: #ffffff;
 }
 
 .slot-button {
-    --border-radius: 12px;
+    --border-radius: 14px;
     height: 60px;
     font-weight: 600;
 }
 
 .slot-button.booked {
-    --background: #e0e0e0;
-    --color: #999;
+    --background: #f3c1da;
+    --color: #9b5a7a;
+}
+
+.legend {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    font-size: 0.9rem;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.available {
+    background: #FF62B7;
+}
+
+.dot.booked {
+    background: #f3c1da;
 }
