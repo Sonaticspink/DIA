@@ -14,7 +14,7 @@ const DrugInventory: React.FC = () => {
   }, []);
 
   const fetchDrugs = async () => {
-    const { data, error } = await supabase.from('drug_inventory').select('*');
+    const { data, error } = await supabase.from('medicines').select('*');
     if (!error && data) setDrugs(data);
   };
 
@@ -36,7 +36,7 @@ const DrugInventory: React.FC = () => {
           <IonRow>
             {drugs.map((drug) => (
               <IonCol size="6" key={drug.id}>
-                <IonCard className="drug-card">
+                <IonCard button className="drug-card" routerLink={`/drug-detail/${drug.id}`}>
                   <div className="image-wrapper">
                     <IonImg src={drug.image_url} />
                   </div>
