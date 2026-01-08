@@ -9,8 +9,10 @@ const Signup: React.FC = () => {
     <IonPage>
       <IonContent className="ion-padding signup-background">
         <div className="signup-container">
-          <div className="logo-section">
-            <IonImg src="assets/logo.png" />
+          {/* Logo Section */} 
+                <div className="logo-section">
+                     <IonImg src="assets/logo.png" className="app-logo" />
+                              
           </div>
 
           <h2 className="signup-title">ลงทะเบียน</h2>
