@@ -40,7 +40,7 @@
     height: 60px;
     font-weight: 600;
 }
-
+ç
 .slot-button.booked {
     --background: #f3c1da;
     --color: #9b5a7a;
@@ -69,20 +69,6 @@
     background: #f3c1da;
 }
 
-.slot-button.available {
-    --color: #3880ff;
-    --border-color: #3880ff;
-}
-
-/* Styling for 'booked' (locked) slots */
-.slot-button.booked {
-    --background: #ebebeb;
-    --color: #a1a1a1;
-    opacity: 0.6;
-}
-
-.center-spinner {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
+.section-title{
+     text-align: center;
 }
