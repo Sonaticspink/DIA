@@ -10,8 +10,7 @@
 
 .detail-header-card {
   background: #ff6fb5ff;
-    padding: 25px;
-    border-radius: 20px;
+    padding: 10px;
     box-shadow: 0 4px 15px rgba(255, 98, 183, 0.25);
     margin-bottom: 20px;
     text-align: center;
@@ -33,7 +32,7 @@
     --border-color: #FF62B7;
     --color: #FF62B7;
     --background-hover: #FF62B7;
-    --color-hover: #ffffff;
+    --color-hover: #000000;
 }
 
 .slot-button {
@@ -68,4 +67,8 @@
 
 .dot.booked {
     background: #f3c1da;
+}
+
+.section-title{
+    text-align: center;
 }
