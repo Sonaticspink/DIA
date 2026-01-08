@@ -9,22 +9,24 @@ import { useHistory } from 'react-router-dom'; // Add this
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './Appointment.css'
+type ValuePiece = Date | null;
+type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 const Appointment: React.FC = () => {
   const [value, setValue] = useState(new Date());
   const history = useHistory();
 
-const handleDateClick = (selectedDate: Date) => {
-  setValue(selectedDate);
+const handleDateClick = (value: Value) => {
+  if (value instanceof Date) {
+    setValue(value);
 
-  // FIX: Extract local date components manually to avoid UTC deduction
-  const year = selectedDate.getFullYear();
-  const month = String(selectedDate.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
-  const day = String(selectedDate.getDate()).padStart(2, '0');
-  
-  const dateStr = `${year}-${month}-${day}`; // Format: YYYY-MM-DD
-  
-  history.push(`/appointment-detail/${dateStr}`);
+    const year = value.getFullYear();
+    const month = String(value.getMonth() + 1).padStart(2, '0');
+    const day = String(value.getDate()).padStart(2, '0');
+    
+    const dateStr = `${year}-${month}-${day}`;
+    history.push(`/appointment-detail/${dateStr}`);
+  }
 };
 
   return (

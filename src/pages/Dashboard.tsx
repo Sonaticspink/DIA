@@ -1,21 +1,39 @@
 import { 
   IonContent, IonPage, IonHeader, IonToolbar, 
-  IonTitle, IonButton, IonIcon, IonAvatar 
+  IonTitle, IonButton, IonIcon, IonAvatar, IonButtons 
 } from '@ionic/react';
-import { book, calendar, medical } from 'ionicons/icons';
+import { book, calendar, medical, logOutOutline } from 'ionicons/icons'; // Added logOutOutline
 import './Dashboard.css';
 import { useHistory } from 'react-router-dom';
+import { supabase } from '../supabaseClient'; // Import your supabase client
 
 const Dashboard: React.FC = () => {
     const history = useHistory();
+
+    const handleLogout = async () => {
+        const { error } = await supabase.auth.signOut();
+        if (!error) {
+            history.push('/home'); // Redirect to login page after logout
+        } else {
+            alert("Error logging out: " + error.message);
+        }
+    };
+
   return (
     <IonPage>
       <IonHeader className="ion-no-border">
         <IonToolbar className="dashboard-toolbar">
-          <IonTitle className="dashboard-title">สวัสดีปกป้อง</IonTitle>
-          <IonAvatar slot="end" className="user-avatar">
-            <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="user" />
-          </IonAvatar>
+          <IonTitle className="dashboard-title">สวัสดีวันจันทร์</IonTitle>
+          
+          {/* Logout Button and Avatar Group */}
+          <IonButtons slot="end">
+            <IonButton onClick={handleLogout} color="danger">
+              <IonIcon slot="icon-only" icon={logOutOutline} />
+            </IonButton>
+            <IonAvatar className="user-avatar" style={{ marginInline: '10px' }}>
+              <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="user" />
+            </IonAvatar>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
 
@@ -31,10 +49,10 @@ const Dashboard: React.FC = () => {
             การนัดหมาย
           </IonButton>
 
-<IonButton expand="block" className="dash-button" onClick={() => history.push('/inventory')}>
-   <IonIcon slot="start" icon={medical} />
-   ยารักษา
-</IonButton>
+          <IonButton expand="block" className="dash-button" onClick={() => history.push('/inventory')}>
+             <IonIcon slot="start" icon={medical} />
+             ยารักษา
+          </IonButton>
         </div>
       </IonContent>
     </IonPage>

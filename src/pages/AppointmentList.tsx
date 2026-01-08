@@ -14,15 +14,22 @@ const AppointmentList: React.FC = () => {
     fetchAppointments();
   }, []);
 
-  const fetchAppointments = async () => {
+const fetchAppointments = async () => {
+  setLoading(true);
+  const { data: { user } } = await supabase.auth.getUser();
+
+  if (user) {
+    // Only fetch appointments that match the current user/guest ID
     const { data, error } = await supabase
       .from('appointments')
       .select('*')
-      .order('appointment_date', { ascending: true });
+      .eq('user_id', user.id) // Key security filter
+      .order('appointment_date', { ascending: false });
 
     if (!error) setAppointments(data || []);
-    setLoading(false);
-  };
+  }
+  setLoading(false);
+};
 
   return (
     <IonPage>
