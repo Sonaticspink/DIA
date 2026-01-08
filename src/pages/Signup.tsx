@@ -60,7 +60,12 @@ const Signup: React.FC = () => {
       <IonLoading isOpen={loading} />
       <IonContent className="ion-padding signup-background">
         <div className="signup-container">
-          <div className="logo-section"><IonImg src="assets/logo.png" /></div>
+          {/* Logo Section กูอยู่ตรงนี้*/} 
+                <div className="logo-section">
+                     <IonImg src="assets/logo.png" className="app-logo" />
+                              
+          </div>
+
           <h2 className="signup-title">ลงทะเบียน</h2>
           <div className="input-group">
             <IonInput placeholder="เบอร์โทร" className="custom-input" onIonInput={(e:any) => setPhone(e.target.value)} />
