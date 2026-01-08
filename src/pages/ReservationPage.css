@@ -39,3 +39,14 @@
     margin-top: 20px;
     height: 55px;
 }
+
+.reservation-card {
+    background: #fff0f6;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-top: 0px;
+     align-items: center;   /* จัดกลางแนวนอน */
+    text-align: center;    /* จัดกลางตัวหนังสือ */
+}
+

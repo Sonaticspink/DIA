@@ -12,7 +12,7 @@
 }
 
 .logo-section {
-    width: 150px; /* Slightly smaller to fit more inputs on screen */
+    width: 70px; /* Slightly smaller to fit more inputs on screen */
     margin-bottom: 15px;
 }
 
@@ -62,4 +62,10 @@
     color: #ff69b4;
     font-weight: bold;
     text-decoration: none;
+}
+
+.link-text {
+    color: #ff69b4;
+    font-weight: bold;
+    cursor: pointer;
 }
