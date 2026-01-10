@@ -11,6 +11,12 @@ import AppointmentDetail from './pages/AppointmentDetail';
 import ReservationPage from './pages/ReservationPage';
 import SuccessPage from './pages/SuccessPage';
 import AppointmentList from './pages/AppointmentList';
+import DoctorDashboard from './pages/DoctorDashboard';
+import ManageDrugs from './pages/ManageDrugs';
+import DoctorCalendar from './pages/DoctorCalendar';
+import DoctorSlotManager from './pages/DoctorSlotManager';
+import DoctorAppointmentList from './pages/DoctorAppointmentList';
+import DoctorAppointmentDetail from './pages/DoctorAppointmentDetail';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -54,6 +60,24 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/appointment-list">
           <AppointmentList />
+        </Route>
+        <Route exact path="/doctor-dashboard">
+          <DoctorDashboard />
+        </Route>
+        <Route exact path="/doctor/manage-drugs">
+          <ManageDrugs />
+        </Route>
+        <Route exact path="/doctor/manage-slots">
+          <DoctorCalendar />
+        </Route>
+        <Route exact path="/doctor/slot-manager/:date">
+          <DoctorSlotManager />
+        </Route>
+        <Route exact path="/doctor/appointments">
+          <DoctorAppointmentList />
+        </Route>
+        <Route exact path="/doctor/appointment-detail/:id">
+          <DoctorAppointmentDetail />
         </Route>
         <Route exact path="/">
           <Redirect to="/home" />

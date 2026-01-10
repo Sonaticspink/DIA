@@ -32,29 +32,40 @@ const Home: React.FC = () => {
   }
 };
 
-  const handleLogin = async () => {
-    if (!phone || !password) {
-      setErrorMsg("กรุณากรอกข้อมูลให้ครบถ้วน");
-      return;
-    }
+const handleLogin = async () => {
+  if (!phone || !password) {
+    setErrorMsg("กรุณากรอกข้อมูลให้ครบถ้วน");
+    return;
+  }
 
-    setLoading(true);
-    // Create the 'fake' email from the phone number
-    const email = `${phone}@myapp.com`;
+  setLoading(true);
 
-    const { error } = await supabase.auth.signInWithPassword({
-      email: email,
-      password: password,
-    });
+  // 1. SPECIFIC DOCTOR CHECK
+  // You can set these to whatever you prefer
+  const adminUsername = "doctor_admin"; 
+  const adminPassword = "password1234";
 
+  if (phone === adminUsername && password === adminPassword) {
     setLoading(false);
+    history.push('/doctor-dashboard'); // Go to the pink doctor dashboard
+    return;
+  }
 
-    if (error) {
-      setErrorMsg("เบอร์โทรหรือรหัสผ่านไม่ถูกต้อง");
-    } else {
-      history.push('/dashboard');
-    }
-  };
+  // 2. REGULAR USER LOGIN (Old Logic)
+  const email = `${phone}@myapp.com`;
+  const { error } = await supabase.auth.signInWithPassword({
+    email: email,
+    password: password,
+  });
+
+  setLoading(false);
+
+  if (error) {
+    setErrorMsg("เบอร์โทรหรือรหัสผ่านไม่ถูกต้อง");
+  } else {
+    history.push('/dashboard');
+  }
+};
 
   return (
     <IonPage>
