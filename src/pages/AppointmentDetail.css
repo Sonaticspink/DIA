@@ -72,3 +72,12 @@
 .section-title{
      text-align: center;
 }
+
+.custom-back-btn {
+  color: #9f0085ff; /* สีลูกศร */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+}
+.custom-title {
+  color: #9f0085ff; /* สีข้อความ */
+  font-weight: bold;
+}
