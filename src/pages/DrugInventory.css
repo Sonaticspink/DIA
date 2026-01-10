@@ -49,3 +49,7 @@
     padding: 2px 8px;
     border-radius: 5px;
 }
+
+.custom-back-btn {
+  color: #9f0085ff; /* สีลูกศร */
+}

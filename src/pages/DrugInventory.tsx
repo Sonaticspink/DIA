@@ -23,7 +23,7 @@ const DrugInventory: React.FC = () => {
       <IonHeader className="ion-no-border">
         <IonToolbar className="inventory-header">
           <IonButtons slot="start">
-            <IonBackButton defaultHref="/dashboard" text="ย้อนกลับ" />
+            <IonBackButton defaultHref="/dashboard" text="ย้อนกลับ" className="custom-back-btn"/>
           </IonButtons>
         </IonToolbar>
         <div className="search-container">
