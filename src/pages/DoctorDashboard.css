@@ -1,0 +1,46 @@
+.doctor-header {
+    --background: #fbc6e3; /* Light pink header */
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+}
+
+.doctor-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.doctor-avatar-circle {
+    border: 3px solid #ff0080; /* Bright pink border */
+    width: 45px;
+    height: 45px;
+    margin-right: 15px;
+}
+
+.doctor-bg {
+    --background: #ffffff;
+}
+
+.button-container-doctor {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 40px;
+    padding: 0 10px;
+}
+
+.doctor-main-btn {
+    --background: #ff70c1; /* Solid pink buttons */
+    --border-radius: 40px; /* Fully rounded */
+    --color: #ffffff;
+    font-size: 1.3rem;
+    height: 65px;
+    margin: 0;
+    box-shadow: 0 4px 10px rgba(255, 112, 193, 0.4);
+}
+
+.doctor-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
