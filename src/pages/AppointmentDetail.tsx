@@ -49,8 +49,8 @@ const AppointmentDetail: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar color="primary">
-          <IonButtons slot="start"><IonBackButton defaultHref="/appointment" /></IonButtons>
-          <IonTitle>เลือกเวลาจอง</IonTitle>
+          <IonButtons slot="start"><IonBackButton defaultHref="/appointment" className="custom-back-btn"/></IonButtons>
+          <IonTitle className="custom-title">เลือกเวลาจอง</IonTitle>
           <IonButtons slot="end">
             <IonButton routerLink="/appointment-list"><IonIcon icon={listOutline} slot="icon-only" /></IonButton>
           </IonButtons>

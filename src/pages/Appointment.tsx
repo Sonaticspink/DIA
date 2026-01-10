@@ -34,9 +34,9 @@ const handleDateClick = (value: Value) => {
       <IonHeader>
         <IonToolbar color="primary">
           <IonButtons slot="start">
-            <IonBackButton defaultHref="/dashboard" />
+            <IonBackButton defaultHref="/dashboard" className="custom-back-btn"  />
           </IonButtons>
-          <IonTitle>การนัดหมาย</IonTitle>
+          <IonTitle className="custom-title" >การนัดหมาย</IonTitle>
           <IonButtons slot="end">
       <IonButton routerLink="/appointment-list">
         <IonIcon icon={listOutline} slot="icon-only" />
