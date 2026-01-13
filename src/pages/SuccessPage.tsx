@@ -21,7 +21,7 @@ const SuccessPage: React.FC = () => {
           
           {/* Logo Section */} 
                     <div className="logo-section">
-                      <IonImg src="assets/logo.png" className="app-logo" />
+                      <IonImg src="/logo.png" className="app-logo" />
                     </div>
 
           {/* Big Success Icon */}

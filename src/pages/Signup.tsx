@@ -62,7 +62,7 @@ const Signup: React.FC = () => {
         <div className="signup-container">
           {/* Logo Section กูอยู่ตรงนี้*/} 
                 <div className="logo-section">
-                     <IonImg src="assets/logo.png" className="app-logo" />
+                     <IonImg src="/logo.png" className="app-logo" />
                               
           </div>
 
