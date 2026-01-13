@@ -21,14 +21,37 @@ const ManageDrugs: React.FC = () => {
     if (data) setDrugs(data);
   };
 
-  const handleSave = async () => {
-    if (editingDrug) {
-      await supabase.from('medicines').update(formData).eq('id', editingDrug.id);
-    } else {
-      await supabase.from('medicines').insert([formData]);
+const handleSave = async () => {
+    // ตรวจสอบเบื้องต้นว่าใส่ชื่อยาหรือยัง
+    if (!formData.name) {
+      alert("กรุณากรอกชื่อยา");
+      return;
     }
-    closeModal();
-    fetchDrugs();
+
+    try {
+      if (editingDrug) {
+        // กรณีแก้ไข
+        const { error } = await supabase
+          .from('medicines')
+          .update(formData)
+          .eq('id', editingDrug.id);
+        
+        if (error) throw error;
+      } else {
+        // กรณีเพิ่มใหม่
+        const { error } = await supabase
+          .from('medicines')
+          .insert([formData]);
+        
+        if (error) throw error;
+      }
+
+      alert("บันทึกข้อมูลสำเร็จ");
+      closeModal();
+      fetchDrugs(); // โหลดข้อมูลใหม่มาแสดงใน List
+    } catch (error: any) {
+      alert("เกิดข้อผิดพลาด: " + error.message);
+    }
   };
 
   const closeModal = () => {
