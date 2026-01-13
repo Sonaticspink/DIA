@@ -62,37 +62,63 @@ const DoctorAppointmentDetail: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent className="ion-padding doctor-bg">
-        <IonToast isOpen={showToast} message="อัปเดตสถานะเรียบร้อยแล้ว" duration={1000} color="success" />
+     <IonContent className="ion-padding doctor-detail-bg">
+  <IonToast
+    isOpen={showToast}
+    message="อัปเดตสถานะเรียบร้อยแล้ว"
+    duration={1000}
+    color="success"
+  />
 
-        <div className="detail-top-info">
-          <span className="info-label-box">รายละเอียดนัด</span>
-          <span className="info-date-time">
-            {new Date(appt.appointment_date).toLocaleDateString('th-TH')}<br/>
-            {appt.appointment_time.substring(0, 5)} {parseInt(appt.appointment_time) >= 12 ? 'PM' : 'AM'}
-          </span>
-        </div>
+  {/* Summary Card */}
+  <div className="reservation-card">
+    <div className="status-badge">สรุปรายละเอียด</div>
+    <p className="summary-text">
+      📅 {new Date(appt.appointment_date).toLocaleDateString('th-TH')} <br />
+      ⏰ {appt.appointment_time.substring(0, 5)} น.
+    </p>
+  </div>
 
-        <div className="patient-detail-card">
-          <h2 className="patient-name-title">{appt.patient_name}</h2>
-          <p className="patient-symptom">อาการ : {appt.note || 'ไม่ได้ระบุ'}</p>
-          <div className="patient-phone-bottom">เบอร์โทร : {appt.patient_phone}</div>
-        </div>
+  {/* Patient Info */}
+  <div className="input-box-container">
+    <h2 className="patient-name-title">{appt.patient_name}</h2>
 
-        {/* Displays the status from the database */}
-        <div className="status-display-box">
-          สถานะ : {appt.status || 'รอการยืนยัน'}
-        </div>
+    <div className="info-row">
+      <span className="info-label">อาการ</span>
+      <span className="info-value">{appt.note || 'ไม่ได้ระบุ'}</span>
+    </div>
 
-        <div className="action-button-group">
-          <IonButton expand="block" className="btn-approve" onClick={() => updateStatus('ยืนยันการนัดหมาย')}>
-            ยืนยันการนัดหมาย
-          </IonButton>
-          <IonButton expand="block" className="btn-decline" onClick={() => updateStatus('ยกเลิกการนัดหมาย')}>
-            ยกเลิกการนัดหมาย
-          </IonButton>
-        </div>
-      </IonContent>
+    <div className="info-row">
+      <span className="info-label">เบอร์โทร</span>
+      <span className="info-value">{appt.patient_phone}</span>
+    </div>
+
+    <div className="status-display-box">
+      สถานะปัจจุบัน : <strong>{appt.status || 'รอการยืนยัน'}</strong>
+    </div>
+  </div>
+
+  {/* Action Buttons */}
+  <IonButton
+    expand="block"
+    shape="round"
+    className="confirm-btn approve-btn"
+    onClick={() => updateStatus('ยืนยันการนัดหมาย')}
+  >
+    ยืนยันการนัดหมาย
+  </IonButton>
+
+  <IonButton
+    expand="block"
+    shape="round"
+    fill="outline"
+    className="confirm-btn decline-btn"
+    onClick={() => updateStatus('ยกเลิกการนัดหมาย')}
+  >
+    ยกเลิกการนัดหมาย
+  </IonButton>
+</IonContent>
+
     </IonPage>
   );
 };
