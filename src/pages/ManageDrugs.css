@@ -68,3 +68,41 @@
     height: 50px;
     font-weight: bold;
 }
+
+
+/* Header background */
+
+.nav-add-btn-green {
+  --color: #2ecc71 !important;
+  --ion-color-base: #2ecc71 !important;
+}
+
+.nav-add-btn-green ion-icon {
+  color: #2ecc71 !important;
+  font-size: 26px;
+}
+
+.nav-add-btn-green:hover ion-icon {
+  color: #27ae60 !important;
+  transform: scale(1.15);
+}
+
+.nav-add-btn-green:active ion-icon {
+  transform: scale(0.95);
+}
+
+/* ❌ Modal Close Button (Red) */
+.modal-close-btn-red {
+  --color: #e53935 !important;
+  --ion-color-base: #e53935 !important;
+  font-weight: bold;
+}
+
+.modal-close-btn-red:hover {
+  --color: #c62828 !important;
+}
+
+.modal-close-btn-red:active {
+  transform: scale(0.95);
+}
+

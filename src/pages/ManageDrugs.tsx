@@ -59,6 +59,12 @@ const ManageDrugs: React.FC = () => {
             <IonBackButton defaultHref="/doctor-dashboard" />
           </IonButtons>
           <IonTitle>จัดการข้อมูลยา</IonTitle>
+            {/* ➕ Add Button on Navbar Right */}
+  <IonButtons slot="end">
+    <IonButton fill="clear" onClick={() => setShowModal(true)} className="nav-add-btn-green">
+      <IonIcon icon={add} slot="icon-only" />
+    </IonButton>
+  </IonButtons>
         </IonToolbar>
       </IonHeader>
 
@@ -97,8 +103,14 @@ const ManageDrugs: React.FC = () => {
             <IonToolbar className="modal-header-pink">
               <IonTitle>{editingDrug ? 'แก้ไขข้อมูลยา' : 'เพิ่มยาใหม่'}</IonTitle>
               <IonButtons slot="end">
-                <IonButton onClick={closeModal}>ปิด</IonButton>
-              </IonButtons>
+    <IonButton
+      fill="clear"
+      onClick={closeModal}
+      className="modal-close-btn-red"
+    >
+      ปิด
+    </IonButton>
+  </IonButtons>
             </IonToolbar>
           </IonHeader>
           <IonContent className="ion-padding modal-content">
