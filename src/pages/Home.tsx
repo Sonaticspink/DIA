@@ -42,7 +42,7 @@ const handleLogin = async () => {
 
   // 1. SPECIFIC DOCTOR CHECK
   // You can set these to whatever you prefer
-  const adminUsername = "doctor_admin"; 
+  const adminUsername = "0821529499"; 
   const adminPassword = "password1234";
 
   if (phone === adminUsername && password === adminPassword) {
