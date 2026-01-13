@@ -48,7 +48,6 @@ const SuccessPage: React.FC = () => {
             <IonButton 
               expand="block" 
               shape="round" 
-              color="primary" 
               className="ok-btn"
               onClick={() => history.push('/dashboard')}
             >
