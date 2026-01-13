@@ -3,19 +3,19 @@
   "name": "Clinic Management System",
   "icons": [
     {
-      "src": "assets/icon/favicon.png",
+      "src": "favicon.png",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/png"
     },
     {
-      "src": "assets/logo.png",
+      "src": "logo.png", 
       "type": "image/png",
       "sizes": "512x512",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff"
+  "theme_color": "#ff70c1",
+  "background_color": "#fbc6e3"
 }
