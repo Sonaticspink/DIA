@@ -81,7 +81,7 @@ const handleLogin = async () => {
       <IonContent className="ion-padding login-background">
         <div className="login-container">
           <div className="logo-section">
-            <IonImg src="assets/logo.png" className="app-logo" />
+            <IonImg src="/logo.png" className="app-logo" />
           </div>
 
           <h2 className="login-title">ลงชื่อเข้าใช้งาน</h2>
