@@ -1,5 +1,6 @@
 .doctor-list-header {
     --background: #fbc6e3; /* Light pink background */
+    height: 50px ;
 }
 
 .header-pink-badge {
@@ -51,7 +52,159 @@
     background: #ffb7df;
     display: inline-block;
     padding: 5px 15px;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    border-radius: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-weight: bold;
+}
+
+/* Background */
+.doctor-detail-bg {
+  --background: linear-gradient(to bottom, #ffe4f0 0%, #ffffff 100%);
+}
+
+/* Header */
+.doctor-list-header {
+  --background: #fbc6e3;
+  
+}
+
+.header-pink-badge {
+  background: #ff70c1;
+  color: white;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+/* Summary card (เหมือน reservation-card) */
+.reservation-card {
+  background: #fff0f6;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.status-badge {
+  background: #ffb7df;
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.summary-text {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Detail Card */
+.input-box-container {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 25px;
+}
+
+.patient-name-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #9e238a;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed #f0c6dd;
+}
+
+.info-label {
+  font-weight: bold;
+  color: #555;
+}
+
+.info-value {
+  color: #333;
+}
+
+/* Status box */
+.status-display-box {
+  margin-top: 15px;
+  background: #ffdeee;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Buttons */
+.confirm-btn {
+  --border-radius: 40px;
+  height: 55px;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.approve-btn {
+  --background: #f9bdde;              /* ชมพูอ่อน */
+  --color: #6a007a;                   /* ม่วงเข้ม */
+  --border-radius: 40px;
+  transition: all 0.25s ease;
+}
+
+.approve-btn:hover {
+  --background: #ff69b4;              /* ชมพูเข้ม */
+  --color: #ffffff;                   /* ม่วงเข้มขึ้น */
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(255,105,180,0.4);
+}
+
+.approve-btn:active {
+  transform: scale(0.97);
+}
+
+.decline-btn {
+  --background: #ffa4a4;              /* แดงอ่อน */
+  --color: #8b0000;                   /* แดงเข้ม */
+  --border-radius: 40px;
+  transition: all 0.25s ease;
+}
+
+.decline-btn:hover {
+  --background: #e53935;              /* แดงเข้ม */
+  --color: #ffffff;                   /* ขาว */
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(229,57,53,0.4);
+}
+
+/* Active */
+.decline-btn:active {
+  transform: scale(0.97);
+}
+
+.header-badge-container {
+    position: absolute;
+  left: 85%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  align-items: center;
+}
+
+.header-pink-badge {
+    width: fit-content;
+  background: #ff70c1;
+  color: white;
+  border-radius: 18px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  white-space: nowrap;
 }
