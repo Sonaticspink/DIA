@@ -24,19 +24,21 @@
 .button-container-doctor {
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    margin-top: 40px;
-    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    height: 80%; /* Centers buttons vertically */
 }
 
 .doctor-main-btn {
-    --background: #ff70c1; /* Solid pink buttons */
-    --border-radius: 40px; /* Fully rounded */
-    --color: #ffffff;
+    --background: #ff69b4;
+    --background-activated: #ff1493;
+    --border-radius: 40px;
+    --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 80%;
+    height: 70px;
     font-size: 1.3rem;
-    height: 65px;
-    margin: 0;
-    box-shadow: 0 4px 10px rgba(255, 112, 193, 0.4);
+    font-weight: bold;
 }
 
 .doctor-footer {

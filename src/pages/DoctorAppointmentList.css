@@ -1,5 +1,6 @@
 .doctor-list-header {
     --background: #fbc6e3; /* Light pink background */
+    height: 50px ;
 }
 
 .header-pink-badge {
@@ -51,8 +52,9 @@
     background: #ffb7df;
     display: inline-block;
     padding: 5px 15px;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    border-radius: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-weight: bold;
 }
 
@@ -64,6 +66,7 @@
 /* Header */
 .doctor-list-header {
   --background: #fbc6e3;
+  
 }
 
 .header-pink-badge {
@@ -111,7 +114,7 @@
 .patient-name-title {
   font-size: 1.4rem;
   font-weight: bold;
-  color: #9f0085;
+  color: #9e238a;
   text-align: center;
   margin-bottom: 15px;
 }
@@ -135,7 +138,7 @@
 /* Status box */
 .status-display-box {
   margin-top: 15px;
-  background: #ffe4f1;
+  background: #ffdeee;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
@@ -150,8 +153,8 @@
   font-weight: bold;
 }
 
-..approve-btn {
-  --background: #ffd1ea;              /* ชมพูอ่อน */
+.approve-btn {
+  --background: #f9bdde;              /* ชมพูอ่อน */
   --color: #6a007a;                   /* ม่วงเข้ม */
   --border-radius: 40px;
   transition: all 0.25s ease;
@@ -159,7 +162,7 @@
 
 .approve-btn:hover {
   --background: #ff69b4;              /* ชมพูเข้ม */
-  --color: #4b005c;                   /* ม่วงเข้มขึ้น */
+  --color: #ffffff;                   /* ม่วงเข้มขึ้น */
   transform: translateY(-1px);
   box-shadow: 0 6px 14px rgba(255,105,180,0.4);
 }
@@ -169,7 +172,7 @@
 }
 
 .decline-btn {
-  --background: #ffd6d6;              /* แดงอ่อน */
+  --background: #ffa4a4;              /* แดงอ่อน */
   --color: #8b0000;                   /* แดงเข้ม */
   --border-radius: 40px;
   transition: all 0.25s ease;
@@ -189,12 +192,11 @@
 
 .header-badge-container {
     position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 85%;
+  top: 50%;
+  transform: translate(-50%,-50%);
   display: flex;
   align-items: center;
-  height: 100%;
-  width: auto;
 }
 
 .header-pink-badge {
@@ -202,7 +204,7 @@
   background: #ff70c1;
   color: white;
   border-radius: 18px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: bold;
   white-space: nowrap;
 }
