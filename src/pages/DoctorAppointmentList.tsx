@@ -52,7 +52,7 @@ const DoctorAppointmentList: React.FC = () => {
       </IonHeader>
 
       <IonContent className="ion-padding doctor-bg">
-        <div className="status-section-label">เร็วๆนี้</div>
+        <div className="status-section-label">นัดที่ใกล้ที่สุด</div>
         
         {loading ? (
           <div className="center-spinner" style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
