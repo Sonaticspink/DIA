@@ -1,54 +1,80 @@
 import React, { useEffect, useState } from 'react';
 import { 
   IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBackButton,
-  IonList, IonItem, IonLabel, IonButton, IonIcon, IonModal, IonInput, IonTextarea, IonImg, IonFab, IonFabButton
+  IonList, IonItem, IonLabel, IonButton, IonIcon, IonModal, IonInput, IonTextarea, IonImg, IonFab, IonFabButton, IonSpinner
 } from '@ionic/react';
-import { trash, create, add } from 'ionicons/icons';
+import { trash, create, add, cameraOutline } from 'ionicons/icons';
 import { supabase } from '../supabaseClient';
-import './ManageDrugs.css'; // New dedicated CSS
+import './ManageDrugs.css';
 
 const ManageDrugs: React.FC = () => {
   const [drugs, setDrugs] = useState<any[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [editingDrug, setEditingDrug] = useState<any>(null);
+  const [uploading, setUploading] = useState(false); // State สำหรับสถานะการอัปโหลด
   const [formData, setFormData] = useState({ name: '', image_url: '', usage: '', detail: '', warning: '' });
 
   useEffect(() => { fetchDrugs(); }, []);
 
   const fetchDrugs = async () => {
-    // Fetching medicine data from your Supabase table
     const { data } = await supabase.from('medicines').select('*').order('id', { ascending: true });
     if (data) setDrugs(data);
   };
 
-const handleSave = async () => {
-    // ตรวจสอบเบื้องต้นว่าใส่ชื่อยาหรือยัง
-    if (!formData.name) {
-      alert("กรุณากรอกชื่อยา");
+  // ฟังก์ชันอัปโหลดรูปภาพไปยัง Supabase Storage
+  const handleFileUpload = async (event: any) => {
+    try {
+      setUploading(true);
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const fileExt = file.name.split('.').pop();
+      const fileName = `${Math.random()}.${fileExt}`;
+      const filePath = `${fileName}`;
+
+      // อัปโหลดเข้าสู่ Bucket 'medicine-images'
+      const { error: uploadError } = await supabase.storage
+        .from('medicine-images')
+        .upload(filePath, file);
+
+      if (uploadError) throw uploadError;
+
+      // ดึง URL สาธารณะมาเก็บไว้ใน formData
+      const { data } = supabase.storage
+        .from('medicine-images')
+        .getPublicUrl(filePath);
+
+      setFormData({ ...formData, image_url: data.publicUrl });
+    } catch (error: any) {
+      alert("อัปโหลดผิดพลาด: " + error.message);
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  const handleSave = async () => {
+    if (!formData.name || !formData.image_url) {
+      alert("กรุณากรอกชื่อยาและอัปโหลดรูปภาพ");
       return;
     }
 
     try {
       if (editingDrug) {
-        // กรณีแก้ไข
         const { error } = await supabase
           .from('medicines')
           .update(formData)
           .eq('id', editingDrug.id);
-        
         if (error) throw error;
       } else {
-        // กรณีเพิ่มใหม่
         const { error } = await supabase
           .from('medicines')
           .insert([formData]);
-        
         if (error) throw error;
       }
 
       alert("บันทึกข้อมูลสำเร็จ");
       closeModal();
-      fetchDrugs(); // โหลดข้อมูลใหม่มาแสดงใน List
+      fetchDrugs();
     } catch (error: any) {
       alert("เกิดข้อผิดพลาด: " + error.message);
     }
@@ -108,7 +134,6 @@ const handleSave = async () => {
           ))}
         </IonList>
 
-        {/* Floating Action Button for Adding New Medicine */}
         <IonFab vertical="bottom" horizontal="end" slot="fixed">
           <IonFabButton onClick={() => setShowModal(true)} className="pink-fab">
             <IonIcon icon={add} />
@@ -127,12 +152,32 @@ const handleSave = async () => {
           <IonContent className="ion-padding modal-content">
             <div className="input-group-pink">
               <IonInput label="ชื่อยา" labelPlacement="stacked" fill="outline" value={formData.name} onIonInput={e => setFormData({...formData, name: e.detail.value!})} />
-              <IonInput label="URL รูปภาพ" labelPlacement="stacked" fill="outline" value={formData.image_url} onIonInput={e => setFormData({...formData, image_url: e.detail.value!})} />
+              
+              {/* ส่วน Upload รูปภาพแทน URL เดิม */}
+              <div className="upload-container" style={{ margin: '15px 0' }}>
+                <IonLabel style={{ display: 'block', marginBottom: '10px' }}>รูปภาพยา</IonLabel>
+                <input type="file" accept="image/*" onChange={handleFileUpload} style={{ display: 'none' }} id="file-upload" />
+                <label htmlFor="file-upload">
+                  <IonButton expand="block" fill="outline" color="medium" onClick={() => document.getElementById('file-upload')?.click()}>
+                    <IonIcon icon={cameraOutline} slot="start" />
+                    {uploading ? 'กำลังอัปโหลด...' : 'เลือกรูปภาพยา'}
+                  </IonButton>
+                </label>
+                {uploading && <div style={{ textAlign: 'center', marginTop: '10px' }}><IonSpinner name="crescent" /></div>}
+                {formData.image_url && !uploading && (
+                  <div style={{ textAlign: 'center', marginTop: '10px' }}>
+                    <IonImg src={formData.image_url} style={{ width: '120px', height: '120px', margin: '0 auto', borderRadius: '10px' }} />
+                  </div>
+                )}
+              </div>
+
               <IonTextarea label="สรรพคุณ/วิธีใช้" labelPlacement="stacked" fill="outline" rows={2} value={formData.usage} onIonInput={e => setFormData({...formData, usage: e.detail.value!})} />
               <IonTextarea label="รายละเอียด" labelPlacement="stacked" fill="outline" rows={3} value={formData.detail} onIonInput={e => setFormData({...formData, detail: e.detail.value!})} />
               <IonTextarea label="คำเตือน" labelPlacement="stacked" fill="outline" rows={2} value={formData.warning} onIonInput={e => setFormData({...formData, warning: e.detail.value!})} />
             </div>
-            <IonButton expand="block" onClick={handleSave} className="pink-save-btn">บันทึกข้อมูล</IonButton>
+            <IonButton expand="block" onClick={handleSave} className="pink-save-btn" disabled={uploading}>
+              บันทึกข้อมูล
+            </IonButton>
           </IonContent>
         </IonModal>
       </IonContent>

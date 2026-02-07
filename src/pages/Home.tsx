@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   IonContent, 
   IonPage, 
@@ -9,63 +9,72 @@ import {
   IonLoading,
   IonToast
 } from '@ionic/react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
 import './Home.css';
 
 const Home: React.FC = () => {
   const history = useHistory();
+  const location = useLocation<{ registeredPhone?: string }>();
+  
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
-  const handleGuestLogin = async () => {
-  setLoading(true);
-  const { error } = await supabase.auth.signInAnonymously(); // Creates unique Guest ID
-  setLoading(false);
+  // ดึงเบอร์โทรอัตโนมัติหากเพิ่งสมัครสมาชิกเสร็จ
+  useEffect(() => {
+    if (location.state && location.state.registeredPhone) {
+      setPhone(location.state.registeredPhone);
+    }
+  }, [location]);
 
-  if (error) {
-    setErrorMsg("เกิดข้อผิดพลาด: " + error.message);
-  } else {
-    history.push('/dashboard');
-  }
-};
+  const handleLogin = async () => {
+    if (!phone || !password) {
+      setErrorMsg("กรุณากรอกข้อมูลให้ครบถ้วน");
+      return;
+    }
 
-const handleLogin = async () => {
-  if (!phone || !password) {
-    setErrorMsg("กรุณากรอกข้อมูลให้ครบถ้วน");
-    return;
-  }
+    if (phone.length !== 10) {
+      setErrorMsg("กรุณากรอกเบอร์โทรให้ครบ 10 หลัก");
+      return;
+    }
 
-  setLoading(true);
+    setLoading(true);
 
-  // 1. SPECIFIC DOCTOR CHECK
-  // You can set these to whatever you prefer
-  const adminUsername = "0821529499"; 
-  const adminPassword = "password1234";
+    // กำหนดเบอร์โทรของคุณหมอเพื่อใช้แยกหน้า Dashboard
+    const adminUsername = "0821529499"; 
 
-  if (phone === adminUsername && password === adminPassword) {
+    // ล็อกอินผ่าน Supabase Auth เพื่อให้ได้สิทธิ์ Authenticated ไปจัดการตารางเวลา
+    const { error } = await supabase.auth.signInWithPassword({
+      email: `${phone}@myapp.com`,
+      password: password,
+    });
+
     setLoading(false);
-    history.push('/doctor-dashboard'); // Go to the pink doctor dashboard
-    return;
-  }
 
-  // 2. REGULAR USER LOGIN (Old Logic)
-  const email = `${phone}@myapp.com`;
-  const { error } = await supabase.auth.signInWithPassword({
-    email: email,
-    password: password,
-  });
+    if (error) {
+      setErrorMsg("เบอร์โทรหรือรหัสผ่านไม่ถูกต้อง");
+    } else {
+      // ถ้าล็อกอินสำเร็จ ตรวจสอบว่าเป็นหมอหรือคนไข้
+      if (phone === adminUsername) {
+        history.push('/doctor-dashboard');
+      } else {
+        history.push('/dashboard');
+      }
+    }
+  };
 
-  setLoading(false);
-
-  if (error) {
-    setErrorMsg("เบอร์โทรหรือรหัสผ่านไม่ถูกต้อง");
-  } else {
-    history.push('/dashboard');
-  }
-};
+  const handleGuestLogin = async () => {
+    setLoading(true);
+    const { error } = await supabase.auth.signInAnonymously();
+    setLoading(false);
+    if (error) {
+      setErrorMsg("เกิดข้อผิดพลาด: " + error.message);
+    } else {
+      history.push('/dashboard');
+    }
+  };
 
   return (
     <IonPage>
@@ -91,6 +100,7 @@ const handleLogin = async () => {
               placeholder="เบอร์โทร" 
               className="custom-input" 
               type="tel"
+              maxlength={10}
               value={phone}
               onIonInput={(e: any) => setPhone(e.target.value)}
             />
@@ -108,17 +118,17 @@ const handleLogin = async () => {
             <IonButton expand="block" className="main-button" onClick={handleLogin}>
               เข้าสู่ระบบ
             </IonButton>
-              <IonButton expand="block" className="main-button secondary" onClick={handleGuestLogin}>
-                ไม่ใช้บัญชี
-              </IonButton>
+            <IonButton expand="block" className="main-button secondary" onClick={handleGuestLogin}>
+              ใช้งานแบบไม่ใช้บัญชี
+            </IonButton>
           </div>
 
-            <div className="footer-text">
-              <span>ยังไม่มีบัญชี </span>
-              <IonRouterLink routerLink="/signup" className="register-link">
-                ลงทะเบียน
-              </IonRouterLink>
-            </div>
+          <div className="footer-text">
+            <span>ยังไม่มีบัญชี </span>
+            <IonRouterLink routerLink="/signup" className="register-link">
+              ลงทะเบียน
+            </IonRouterLink>
+          </div>
         </div>
       </IonContent>
     </IonPage>

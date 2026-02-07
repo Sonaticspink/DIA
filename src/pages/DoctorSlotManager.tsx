@@ -31,17 +31,25 @@ const DoctorSlotManager: React.FC = () => {
     setLoading(false);
   };
 
-  const toggleSlot = async (time: string, currentlyBooked: boolean) => {
-    if (currentlyBooked) {
-      const { error } = await supabase.from('time_slot').delete().eq('date', date).eq('time', time);
-      if (!error) setToastMsg(`ปลดล็อคเวลา ${time.substring(0, 5)} แล้ว`);
-    } else {
-      const { error } = await supabase.from('time_slot').upsert({ date, time, status: 'booked' });
-      if (!error) setToastMsg(`ล็อคเวลา ${time.substring(0, 5)} แล้ว`);
-    }
-    setShowToast(true);
-    fetchBookedStatus();
-  };
+const toggleSlot = async (time: string, currentlyBooked: boolean) => {
+  if (currentlyBooked) {
+    // ต้องลบโดยใช้ค่า 'time' เต็มๆ (เช่น '09:00:00') ไม่ใช่ตัดเหลือ 5 ตัว
+    const { error } = await supabase
+      .from('time_slot')
+      .delete()
+      .eq('date', date)
+      .eq('time', time); // ใช้ค่า time จาก hardcodedSlots โดยตรง
+    
+    if (!error) setToastMsg(`ปลดล็อคเวลา ${time.substring(0, 5)} แล้ว`);
+  } else {
+    const { error } = await supabase
+      .from('time_slot')
+      .upsert({ date, time, status: 'booked' });
+    if (!error) setToastMsg(`ล็อคเวลา ${time.substring(0, 5)} แล้ว`);
+  }
+  setShowToast(true);
+  fetchBookedStatus();
+};
 
   return (
     <IonPage>
