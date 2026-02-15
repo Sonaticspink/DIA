@@ -31,16 +31,22 @@
 /* Rounded, light pink inputs */
 .custom-input {
     --background: #fce4ec;
-    --border-radius: 12px;
+    --border-radius: 12px; 
     --padding-start: 15px;
-    margin-bottom: 15px;
-    min-height: 50px;
+    --padding-end: 15px;
+    --highlight-color-focused: transparent;
+    
+    border-radius: 15px;
     border: 1px solid #f8bbd0;
+    
+    margin-bottom: 15px;
+    min-height: 95px;
 }
+
 
 .forgot-password {
     text-align: right;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     color: #888;
     margin-top: -10px;
     margin-bottom: 30px;
@@ -52,8 +58,9 @@
     --background-activated: #ff1493;
     --border-radius: 25px;
     --box-shadow: none;
-    height: 50px;
-    font-size: 1.1rem;
+    height: 70px;
+    width: 100%;
+    font-size: 1.5rem !important;
     margin-bottom: 10px;
 }
 
@@ -62,9 +69,10 @@
     max-width: 320px;
 }
 
+
 .footer-text {
     margin-top: 50px;
-    font-size: 0.9rem;
+    font-size: 2.0rem;
     color: #666;
 }
 
@@ -72,4 +80,16 @@
     color: #ff69b4;
     font-weight: bold;
     cursor: pointer;
+}
+.login-title{
+    font-size: 2.5rem;
+}
+
+.footer-text span {
+  font-size: 1.5rem !important;
+}
+
+.footer-text .register-link {
+  font-size: 1.5rem  !important;
+  font-weight: 600;
 }

@@ -19,6 +19,7 @@
     padding: 20px;
     margin-top: 20px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    font-size: 1.5rem;
 }
 
 .custom-input {
@@ -26,13 +27,14 @@
     --border-radius: 12px;
     border: 1px solid #e0e0e0;
     margin-top: 5px;
+    font-size: 1.5rem;
 }
 
 .input-header {
     font-weight: bold;
     border-left: 4px solid var(--ion-color-primary);
     padding-left: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 15px; 
 }
 
 .confirm-btn {
@@ -41,6 +43,7 @@
     --border-radius: 40px;
     --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     margin-top: 20px;
+    font-size: 1.5rem;
     height: 55px;
 }
 
@@ -52,6 +55,7 @@
     margin-top: 0px;
      align-items: center;   /* จัดกลางแนวนอน */
     text-align: center;    /* จัดกลางตัวหนังสือ */
+    font-size: 1.5rem;
 }
 
 .custom-back-btn {
@@ -61,4 +65,10 @@
 .custom-title {
   color: #9f0085ff; /* สีข้อความ */
   font-weight: bold;
+}
+
+.summary-text {
+  font-size: 1.5rem !important;   /* ปรับขนาดตรงนี้ */
+  font-weight: 600;
+  line-height: 1.6;
 }

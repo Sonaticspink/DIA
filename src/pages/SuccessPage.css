@@ -19,6 +19,9 @@
   --background: #ff69b4;
   --background-hover: #9f0085ff;
   --background-activated: #ff1493;
+  width: 200px;
+  height: 50px;
+  font-size: 1.5rem;
 }
 
 
@@ -28,7 +31,7 @@
 }
 
 .receipt-summary {
-    width: 60%;
+    width: 90%;
     background: #ffffff;
     border-radius: 15px;
     padding: 20px;
@@ -39,4 +42,17 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
+}
+.success-title{
+    font-size: 2.0rem;
+}
+.success-subtitle{
+    font-size: 1.7rem;
+}
+
+.receipt-summary strong {
+  font-size: 2rem !important;
+}
+.receipt-row{
+    font-size: 2rem ;
 }

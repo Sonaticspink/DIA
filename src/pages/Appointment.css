@@ -25,7 +25,7 @@
 .react-calendar__navigation button {
     color: #c00083ff !important;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.7rem;
 }
 
 /* Styling the Days */
@@ -71,7 +71,7 @@
 
 .hint-text {
     color: #b70089ff;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     margin-top: 15px;
     text-align: center;
 }
@@ -83,4 +83,18 @@
 .custom-title {
   color: #9f0085ff; /* สีข้อความ */
   font-weight: bold;
+}
+
+.calendar-container .react-calendar {
+  width: 100% !important;     /* กว้างเต็ม container */
+  max-width: 420px;           /* ปรับความกว้างตามต้องการ */
+  font-size: 30px;            /* ขยายตัวเลขวันที่ */
+  border-radius: 16px;
+  padding:  9px;
+}
+
+.react-calendar__tile--now {
+  background: #736b6b !important;
+  color: inherit !important;
+  border-radius: 16px;
 }
