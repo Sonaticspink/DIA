@@ -29,7 +29,7 @@ const handleDateClick = (value: Value) => {
   }
 };
 
-  return (
+return (
     <IonPage>
       <IonHeader>
         <IonToolbar color="primary">
@@ -38,18 +38,20 @@ const handleDateClick = (value: Value) => {
           </IonButtons>
           <IonTitle className="custom-title" >การนัดหมาย</IonTitle>
           <IonButtons slot="end">
-      <IonButton routerLink="/appointment-list">
-        <IonIcon icon={listOutline} slot="icon-only" />
-      </IonButton>
-    </IonButtons>
+            <IonButton routerLink="/appointment-list">
+              <IonIcon icon={listOutline} slot="icon-only" />
+            </IonButton>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding gray-bg">
         <div className="calendar-container">
           <Calendar 
-            onChange={handleDateClick} // Triggers navigation on click
+            onChange={handleDateClick}
             value={value} 
             locale="th-TH" 
+            // Add this line to disable past dates
+            minDate={new Date()} 
           />
         </div>
         <div className="hint-text">กรุณาเลือกวันที่เพื่อดูรายละเอียด</div>

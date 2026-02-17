@@ -2,18 +2,21 @@ import {
   IonContent, IonPage, IonHeader, IonToolbar, 
   IonTitle, IonButton, IonIcon, IonAvatar, IonButtons 
 } from '@ionic/react';
-import { book, calendar, medical, logOutOutline } from 'ionicons/icons'; // Added logOutOutline
+import { book, calendar, medical, logOutOutline } from 'ionicons/icons';
 import './Dashboard.css';
 import { useHistory } from 'react-router-dom';
-import { supabase } from '../supabaseClient'; // Import your supabase client
+import { supabase } from '../supabaseClient';
 
 const Dashboard: React.FC = () => {
     const history = useHistory();
 
+    // ดึงชื่อวันปัจจุบันภาษาไทย (เช่น วันจันทร์, วันอังคาร)
+    const currentDay = new Intl.DateTimeFormat('th-TH', { weekday: 'long' }).format(new Date());
+
     const handleLogout = async () => {
         const { error } = await supabase.auth.signOut();
         if (!error) {
-            history.push('/home'); // Redirect to login page after logout
+            history.push('/home'); // กลับไปหน้าล็อกอิน
         } else {
             alert("Error logging out: " + error.message);
         }
@@ -23,9 +26,9 @@ const Dashboard: React.FC = () => {
     <IonPage>
       <IonHeader className="ion-no-border">
         <IonToolbar className="dashboard-toolbar">
-          <IonTitle className="dashboard-title">สวัสดีวันจันทร์</IonTitle>
+          {/* แสดงผลชื่อวันแบบไดนามิก */}
+          <IonTitle className="dashboard-title">สวัสดี{currentDay}</IonTitle>
           
-          {/* Logout Button and Avatar Group */}
           <IonButtons slot="end">
             <IonButton onClick={handleLogout} color="danger">
               <IonIcon slot="icon-only" icon={logOutOutline} />

@@ -11,11 +11,13 @@ import './DoctorDashboard.css';
 const DoctorDashboard: React.FC = () => {
   const history = useHistory();
 
-  // Integrated Logout Logic from your sample
+  // ดึงชื่อวันปัจจุบันภาษาไทย
+  const currentDay = new Intl.DateTimeFormat('th-TH', { weekday: 'long' }).format(new Date());
+
   const handleLogout = async () => {
     const { error } = await supabase.auth.signOut();
     if (!error) {
-      history.push('/home'); // Redirect to login page after logout
+      history.push('/home'); // กลับไปหน้าล็อกอิน
     } else {
       alert("Error logging out: " + error.message);
     }
@@ -24,11 +26,10 @@ const DoctorDashboard: React.FC = () => {
   return (
     <IonPage>
       <IonHeader className="ion-no-border">
-        {/* Pink Toolbar matching your doctor design */}
         <IonToolbar className="doctor-header">
-          <IonTitle className="doctor-title">สวัสดีวันจันทร์</IonTitle>
+          {/* อัปเดต Title ให้แสดงวันปัจจุบัน */}
+          <IonTitle className="doctor-title">สวัสดี{currentDay}</IonTitle>
           
-          {/* Integrated Logout Button and Avatar Group style */}
           <IonButtons slot="end">
             <IonButton onClick={handleLogout} color="danger">
               <IonIcon slot="icon-only" icon={logOutOutline} />
@@ -43,19 +44,16 @@ const DoctorDashboard: React.FC = () => {
       <IonContent className="ion-padding doctor-bg">
         <div className="button-container-doctor">
           
-          {/* ข้อมูลการนัด */}
           <IonButton expand="block" className="doctor-main-btn" onClick={() => history.push('/doctor/appointments')}>
             <IonIcon slot="start" icon={book} />
             ข้อมูลการนัด
           </IonButton>
 
-          {/* เลือกเวลาไม่ว่าง */}
           <IonButton expand="block" className="doctor-main-btn" onClick={() => history.push('/doctor/manage-slots')}>
             <IonIcon slot="start" icon={calendar} />
             เลือกเวลาไม่ว่าง
           </IonButton>
 
-          {/* จัดการยา */}
           <IonButton expand="block" className="doctor-main-btn" onClick={() => history.push('/doctor/manage-drugs')}>
             <IonIcon slot="start" icon={medical} />
             จัดการยา
