@@ -21,7 +21,7 @@
     background: white;
     border-radius: 30px 30px 0 0;
     margin-top: -30px;
-    padding: 30px 20px;
+    padding: 120px 20px 30px 20px;
     min-height: 100%;
     box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
     
@@ -52,7 +52,7 @@
     display: flex;
     gap: 15px;
     margin-bottom: 25px;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .icon-wrapper {
@@ -75,6 +75,7 @@
     font-size: 2rem;
     font-weight: 700;
     color: #34495e;
+    line-height: 1.2;
 }
 
 .info-text p {
