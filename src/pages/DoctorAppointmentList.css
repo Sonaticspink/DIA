@@ -192,7 +192,7 @@
 
 .header-badge-container {
     position: absolute;
-  left: 85%;
+  left: 72%;
   top: 50%;
   transform: translate(-50%,-50%);
   display: flex;
@@ -207,4 +207,45 @@
   font-size: 0.9rem;
   font-weight: bold;
   white-space: nowrap;
+}
+
+/* สีสำหรับสถานะ 'รอการยืนยัน' (โทนเหลือง/ชมพูเดิม) */
+.card-pending {
+    background: #ffe4f1; 
+    border-left: 5px solid #ffb7df;
+}
+
+/* สีสำหรับสถานะ 'ยืนยันการรับนัด' (โทนเขียวอ่อน) */
+.card-success {
+    background: #e8f5e9;
+    border-left: 5px solid #2dd36f;
+}
+
+/* สีสำหรับสถานะ 'ยกเลิกการนัดหมาย' (โทนแดงอ่อน) */
+.card-danger {
+    background: #ffebee;
+    border-left: 5px solid #eb445a;
+}
+
+/* ปรับปรุงให้ตัวอักษรใน Card อ่านง่ายขึ้นเมื่อสีเปลี่ยน */
+.appt-row-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+.appt-row-card:active {
+    transform: scale(0.98);
+}
+
+.vertical-divider {
+    width: 1.5px;
+    height: 20px;
+    background: rgba(0,0,0,0.2);
+    margin: 0 15px;
 }

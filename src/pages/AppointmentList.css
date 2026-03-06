@@ -29,3 +29,28 @@
     justify-content: center;
     padding-top: 50px;
 }
+
+.section-status-label {
+    margin: 20px 0 10px 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.list-card {
+    margin-bottom: 12px;
+    --border-radius: 12px;
+    border-left: 6px solid #ccc; /* สีเริ่มต้น */
+}
+
+.card-border-warning { border-left-color: #ffc409; }
+.card-border-success { border-left-color: #2dd36f; }
+.card-border-danger { border-left-color: #eb445a; }
+
+.appt-row-details {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 4px;
+}
