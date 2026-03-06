@@ -4,6 +4,8 @@
 2.npm install date-fns
 3.npm install @supabase/supabase-js
 4.npm install react-calendar
+5.npm install @capacitor/local-notifications
+6.npx cap sync
 ลอง test ด้วย
 ionic serve
 ```
