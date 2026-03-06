@@ -15,6 +15,14 @@ const AppointmentList: React.FC = () => {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   useEffect(() => {
+    const requestNotificationPermission = async () => {
+    const permission = await LocalNotifications.requestPermissions();
+      if (permission.display !== 'granted') {
+        console.warn("User denied notifications");
+      }
+    };
+    
+    requestNotificationPermission();
     fetchAppointments();
     const subscription = setupRealtimeSubscription();
 

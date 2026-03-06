@@ -11,5 +11,11 @@ root.render(
   </React.StrictMode>
 );
 
-// 2. Add this line to enable the PWA features
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('Service Worker registered!', reg))
+      .catch(err => console.error('Registration failed!', err));
+  });
+}
 serviceWorkerRegistration.register();
