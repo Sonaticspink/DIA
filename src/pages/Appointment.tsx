@@ -11,7 +11,6 @@ import 'react-calendar/dist/Calendar.css';
 import './Appointment.css'
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
-
 const Appointment: React.FC = () => {
   const [value, setValue] = useState(new Date());
   const history = useHistory();
@@ -31,12 +30,12 @@ const handleDateClick = (value: Value) => {
 
 return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar color="primary">
+      <IonHeader className="ion-no-border">
+        <IonToolbar className="dashboard-toolbar">
           <IonButtons slot="start">
             <IonBackButton defaultHref="/dashboard" className="custom-back-btn"  />
           </IonButtons>
-          <IonTitle className="custom-title" >การนัดหมาย</IonTitle>
+          <IonTitle className="Appointment-title" >การนัดหมาย</IonTitle>
           <IonButtons slot="end">
             <IonButton routerLink="/appointment-list">
               <IonIcon icon={listOutline} slot="icon-only" />
@@ -44,7 +43,7 @@ return (
           </IonButtons>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="ion-padding gray-bg">
+      <IonContent className="ion-padding Appointment-content">
         <div className="calendar-container">
           <Calendar 
             onChange={handleDateClick}
@@ -52,6 +51,7 @@ return (
             locale="th-TH" 
             // Add this line to disable past dates
             minDate={new Date()} 
+            showNeighboringMonth={false}
           />
         </div>
         <div className="hint-text">กรุณาเลือกวันที่เพื่อดูรายละเอียด</div>

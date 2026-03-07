@@ -1,9 +1,21 @@
+.Appointment-toolbar {
+     --background: #FEC5E5; /* Light pink header */
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+}
+
+.Appointment-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #000;
+}
+
 /* Container to help the calendar stand out */
 .calendar-container {
     display: flex;
     justify-content: center;
     padding: 20px 10px;
-    background: #f4f5f8; /* Light grey background to create contrast with the white calendar */
+    background: #FFDFEE; /* Light grey background to create contrast with the white calendar */
     border-radius: 20px;
     margin: 10px;
 }
@@ -11,52 +23,81 @@
 /* The actual Calendar Card */
 .react-calendar {
     width: 100%;
-    max-width: 450px;
+    max-width: 420px;
     background-color: #ffffff !important; /* Force white background */
     color: #222; /* Dark text for readability */
-    border: 2px solid #e0e0e0 !important; /* Visible border */
+    border: 2px solid #ff9fd0 !important; /* Visible border */
     border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Strong shadow for depth */
-    padding: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Strong shadow for depth */
+    padding: 10px;
     font-family: 'Inter', sans-serif;
+    font-size: 1.6rem;
+}
+
+.react-calendar__tile {
+  height: 80px;
+  padding: 10px 0;
+  overflow: visible !important;
+  text-overflow: unset !important;
 }
 
 /* High Contrast for Navigation (Month/Year buttons) */
 .react-calendar__navigation button {
-    color: #c00083ff !important;
+    color: #a0006d !important;
     font-weight: bold;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
+}
+
+
+/* Day Names (Mon Tue Wed) */
+.react-calendar__month-view__weekdays {
+    color: #7a0060;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+  border-bottom: none;
 }
 
 /* Styling the Days */
 .react-calendar__month-view__days__day {
-    color: #9c0084ff !important;
+    color: #6a0055 !important;
     font-weight: 500;
+    font-size: 1.4rem;
 }
 
-/* High Contrast for Selected Date */
+/* Weekend */
+.react-calendar__month-view__days__day--weekend {
+    color: #e0004d !important;
+}
+
+/* Today */
+.react-calendar__tile--now {
+    background: #ffd2ea !important;
+    color: #5a0047 !important;
+    border-radius: 12px;
+}
+
+/* Selected Day */
 .react-calendar__tile--active {
-    background: var(--ion-color-primary, #3880ff) !important;
-    color: white !important;
+    background: #d63384 !important;
+    color: #ffffff !important;
     border-radius: 12px;
     font-weight: bold;
-    box-shadow: 0 4px 10px rgba(56, 128, 255, 0.4);
+    box-shadow: 0 4px 10px rgba(214, 51, 132, 0.4);
 }
 
-/* Hover effect */
+/* Hover */
 .react-calendar__tile:enabled:hover,
 .react-calendar__tile:enabled:focus {
-    background-color: #e8f0fe;
+    background-color: #ffe3f3;
     border-radius: 12px;
-    color: var(--ion-color-primary);
+    color: #a0006d;
 }
 
-/* Weekend colors to stand out */
-.react-calendar__month-view__days__day--weekend {
-    color: #d91e18 !important; /* Red for Sundays/Saturdays */
-}
-
-/* Styling the appointment list below */
+/* Appointment list */
 .appointment-list {
     margin-top: 25px;
 }
@@ -65,36 +106,29 @@
     --background: #ffffff;
     margin-bottom: 12px;
     border-radius: 15px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #ffb5da;
     --padding-start: 15px;
 }
 
+/* Hint Text */
 .hint-text {
-    color: #b70089ff;
+    color: #b70089;
     font-size: 1.5rem;
     margin-top: 15px;
     text-align: center;
 }
 
+/* Header button */
 .custom-back-btn {
-  color: #9f0085ff; /* สีลูกศร */
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+  color: #9f0085;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.35));
 }
+
 .custom-title {
-  color: #9f0085ff; /* สีข้อความ */
+  color: #9f0085;
   font-weight: bold;
 }
 
-.calendar-container .react-calendar {
-  width: 100% !important;     /* กว้างเต็ม container */
-  max-width: 420px;           /* ปรับความกว้างตามต้องการ */
-  font-size: 30px;            /* ขยายตัวเลขวันที่ */
-  border-radius: 16px;
-  padding:  9px;
-}
-
-.react-calendar__tile--now {
-  background: #736b6b !important;
-  color: inherit !important;
-  border-radius: 16px;
+.Appointment-content {
+    --background: #FFDFEE;
 }

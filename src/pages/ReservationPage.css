@@ -1,3 +1,19 @@
+.Reservation-toolbar {
+     --background: #FEC5E5; /* Light pink header */
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+}
+
+.Reservation-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.Reservation-content {
+    --background: #FFDFEE;
+}
+
 .Reservation-background {
     --background: linear-gradient(to bottom, #ffe4f0 0%, #ffffff 100%);
 }
@@ -56,6 +72,7 @@
      align-items: center;   /* จัดกลางแนวนอน */
     text-align: center;    /* จัดกลางตัวหนังสือ */
     font-size: 1.5rem;
+     font-weight: 700;
 }
 
 .custom-back-btn {
@@ -65,10 +82,11 @@
 .custom-title {
   color: #9f0085ff; /* สีข้อความ */
   font-weight: bold;
+  font-weight: 700;
 }
 
 .summary-text {
   font-size: 1.5rem !important;   /* ปรับขนาดตรงนี้ */
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.6;
 }
