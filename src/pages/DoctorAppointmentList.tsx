@@ -3,14 +3,23 @@ import {
   IonContent, IonHeader, IonPage, IonToolbar, IonButtons, 
   IonBackButton, IonTitle, IonIcon, useIonViewWillEnter, IonSpinner
 } from '@ionic/react';
-import { arrowForwardOutline, timeOutline, calendarOutline } from 'ionicons/icons';
+
+import { 
+  arrowForwardOutline, 
+  timeOutline, 
+  calendarOutline 
+} from 'ionicons/icons';
+
 import { useHistory } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
 import './DoctorAppointmentList.css';
+import './DoctorAppointmentCommon.css';
 
 const DoctorAppointmentList: React.FC = () => {
+
   const [appointments, setAppointments] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+
   const history = useHistory();
 
   useIonViewWillEnter(() => {
@@ -18,81 +27,144 @@ const DoctorAppointmentList: React.FC = () => {
   });
 
   const fetchAllAppointments = async () => {
+
     setLoading(true);
-    // ดึงข้อมูลและเรียงลำดับวันที่ล่าสุดขึ้นก่อน
-    const { data, error } = await supabase
+
+    const { data } = await supabase
       .from('appointments')
       .select('*')
-      .order('appointment_date', { ascending: false }); 
-    
-    if (!error && data) {
-      setAppointments(data);
-    }
+      .order('appointment_date', { ascending: false });
+
+    if (data) setAppointments(data);
+
     setLoading(false);
   };
 
-  // ฟังก์ชันช่วยแสดงผลแต่ละ Section พร้อมกำหนดสี Card
-  const renderSection = (title: string, statusKey: string, badgeClass: string, cardClass: string) => {
-    const filtered = appointments.filter(appt => appt.status === statusKey);
+  const renderSection = (
+    title: string,
+    statusKey: string,
+    badgeClass: string,
+    cardClass: string
+  ) => {
+
+    const filtered = appointments.filter(a => a.status === statusKey);
+
     if (filtered.length === 0) return null;
 
     return (
+
       <div className="section-container">
-        {/* ส่วนหัวของ Section */}
-        <div className={`status-section-label ${badgeClass}`}>{title} ({filtered.length})</div>
-        <div className="list-container">
-          {filtered.map((appt) => (
-            /* ใส่ cardClass เพื่อเปลี่ยนสีพื้นหลังตามสถานะ */
-            <div key={appt.id} className={`appt-row-card ${cardClass}`} onClick={() => history.push(`/doctor/appointment-detail/${appt.id}`)}>
-              <div className="patient-info-mini">
-                <strong>{appt.patient_name}</strong>
-              </div>
-              <div className="row-details">
-                <div className="date-col">
-                  <IonIcon icon={calendarOutline} /> {new Date(appt.appointment_date).toLocaleDateString('th-TH')}
-                </div>
-                <div className="vertical-divider"></div>
-                <div className="time-col">
-                  <IonIcon icon={timeOutline} /> {appt.appointment_time.substring(0, 5)}
-                </div>
-              </div>
-              <IonIcon icon={arrowForwardOutline} className="list-arrow" />
-            </div>
-          ))}
+
+        <div className={`status-section-label ${badgeClass}`}>
+          {title} ({filtered.length})
         </div>
+
+        {filtered.map((appt) => {
+
+          const date = new Date(appt.appointment_date);
+
+          const day = date.getDate();
+          const month = date.toLocaleDateString('th-TH', { month: 'short' });
+
+          return (
+
+            <div
+              key={appt.id}
+  className={`appt-card ${cardClass}`}
+  onClick={() => history.push(`/doctor/appointment-detail/${appt.id}`)}
+>
+  <div className="appt-card-row">
+
+    <div className="date-badge">
+      {day} {month}
+    </div>
+
+    <div className="card-info">
+
+      <div className="patient-name">
+        {appt.patient_name}
       </div>
+
+      <div className="card-meta">
+
+        <span className="meta-item">
+          <IonIcon icon={calendarOutline}/>
+          {date.toLocaleDateString('th-TH')}
+        </span>
+
+        <span className="meta-item">
+          <IonIcon icon={timeOutline}/>
+          {appt.appointment_time.substring(0,5)}
+        </span>
+
+      </div>
+
+    </div>
+
+    <IonIcon icon={arrowForwardOutline} className="card-arrow"/>
+
+  </div>
+            </div>
+
+          );
+        })}
+
+      </div>
+
     );
+
   };
 
   return (
+
     <IonPage>
+
       <IonHeader className="ion-no-border">
-        <IonToolbar className="doctor-list-header">
+
+        <IonToolbar className="doctor-header">
+
           <IonButtons slot="start">
-            <IonBackButton text="ย้อนกลับ" defaultHref="/doctor_dashboard" />
+            <IonBackButton defaultHref="/doctor_dashboard"/>
           </IonButtons>
-          <IonTitle className="header-badge-container">
-             <div className="header-pink-badge">จัดการรายการนัดหมาย</div>
+
+          <IonTitle>
+            📅 รายการนัดหมาย
           </IonTitle>
+
         </IonToolbar>
+
       </IonHeader>
 
-      <IonContent className="ion-padding doctor-bg">
+      <IonContent className="doctor-bg ion-padding">
+
         {loading ? (
-          <div className="center-spinner"><IonSpinner name="crescent" /></div>
+
+          <div className="center-spinner">
+            <IonSpinner name="crescent"/>
+          </div>
+
         ) : appointments.length === 0 ? (
-          <div className="no-data-text">ไม่มีรายการนัดหมายในขณะนี้</div>
+
+          <div className="no-data">
+            ไม่มีรายการนัดหมาย
+          </div>
+
         ) : (
+
           <>
-            {/* เรียกใช้ Section พร้อมส่ง Class สีที่ต้องการ */}
-            {renderSection("🟡 รอการยืนยัน", "รอการยืนยัน", "pending-label", "card-pending")}
-            {renderSection("🟢 ยืนยันการรับนัด", "ยืนยันการนัดหมาย", "success-label", "card-success")}
-            {renderSection("🔴 ยกเลิกการนัดหมาย", "ยกเลิกการนัดหมาย", "danger-label", "card-danger")}
+            {renderSection("รอการยืนยัน", "รอการยืนยัน", "pending-label", "card-pending")}
+            {renderSection("ยืนยันการนัดหมาย", "ยืนยันการนัดหมาย", "success-label", "card-success")}
+            {renderSection("ยกเลิกการนัดหมาย", "ยกเลิกการนัดหมาย", "danger-label", "card-danger")}
           </>
+
         )}
+
       </IonContent>
+
     </IonPage>
+
   );
+
 };
 
 export default DoctorAppointmentList;

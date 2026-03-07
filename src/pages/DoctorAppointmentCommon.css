@@ -1,0 +1,44 @@
+/* Background */
+
+.doctor-detail-bg{
+  --background: linear-gradient(to bottom,#ffe4f0 0%,#ffffff 100%);
+}
+
+/* Header */
+
+.doctor-list-header{
+  --background:#fbc6e3;
+  height:50px;
+  position:relative;
+}
+
+.header-badge-container{
+  position:absolute;
+  right:15px;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.header-pink-badge{
+  background:#ff70c1;
+  color:white;
+  padding:6px 18px;
+  border-radius:18px;
+  font-size:.9rem;
+  font-weight:bold;
+}
+
+/* Spinner */
+
+.center-spinner{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:60vh;
+}
+
+.no-data-text{
+  text-align:center;
+  margin-top:40px;
+  color:#777;
+}

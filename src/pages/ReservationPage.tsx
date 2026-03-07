@@ -29,6 +29,21 @@ const ReservationPage: React.FC = () => {
     fetchUserProfile();
   }, []);
 
+  const formatPhone = (value: string) => {
+  let numbers = value.replace(/\D/g, '').slice(0, 10);
+
+  let formatted = numbers;
+
+  if (numbers.length > 6) {
+    formatted = `${numbers.slice(0,3)}-${numbers.slice(3,6)}-${numbers.slice(6)}`;
+  } 
+  else if (numbers.length > 3) {
+    formatted = `${numbers.slice(0,3)}-${numbers.slice(3)}`;
+  }
+
+  setFormData({ ...formData, phone: formatted });
+};
+
 const handleConfirm = async () => {
   const { data: { user } } = await supabase.auth.getUser();
 
@@ -39,7 +54,7 @@ const handleConfirm = async () => {
         appointment_date: date, 
         appointment_time: time, 
         patient_name: formData.name, 
-        patient_phone: formData.phone, 
+        patient_phone: formData.phone.replace(/-/g, ''), 
         note: formData.note, 
         user_id: user?.id 
     }]);
@@ -90,14 +105,14 @@ const handleConfirm = async () => {
             <IonLabel position="stacked">ชื่อ-นามสกุล</IonLabel>
             <IonItem lines="none" className="custom-input">
               <IonIcon icon={personCircleOutline} slot="start" />
-              <IonInput value={formData.name} onIonInput={e => setFormData({...formData, name: e.detail.value!})} />
+              <IonInput value={formData.name} onIonInput={e =>  setFormData({...formData, name: e.detail.value!})} />
             </IonItem>
           </div>
           <div className="input-item">
             <IonLabel position="stacked">เบอร์โทรศัพท์</IonLabel>
             <IonItem lines="none" className="custom-input">
               <IonIcon icon={callOutline} slot="start" />
-              <IonInput type="tel" value={formData.phone} onIonInput={e => setFormData({...formData, phone: e.detail.value!})} />
+              <IonInput type="tel" maxlength={12} value={formData.phone} onIonInput={e => formatPhone(e.detail.value!)} />
             </IonItem>
           </div>
           <div className="input-item">
@@ -108,7 +123,7 @@ const handleConfirm = async () => {
             </IonItem>
           </div>
         </div>
-        <IonButton expand="block" shape="round" className="confirm-btn" disabled={!formData.name || !formData.phone} onClick={handleConfirm}>ยืนยันการจอง</IonButton>
+        <IonButton expand="block" shape="round" className="confirm-btn" disabled={!formData.name || formData.phone.replace(/-/g,'').length !== 10 || !formData.note} onClick={handleConfirm}>ยืนยันการจอง</IonButton>
       </IonContent>
     </IonPage>
   );

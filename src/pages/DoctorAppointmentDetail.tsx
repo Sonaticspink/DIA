@@ -5,7 +5,8 @@ import {
 } from '@ionic/react';
 import { useParams, useHistory } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
-import './DoctorAppointmentList.css';
+import './DoctorAppointmentDetail.css';
+import './DoctorAppointmentCommon.css';
 
 const DoctorAppointmentDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
