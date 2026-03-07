@@ -1,9 +1,24 @@
+.AppointmentList-toolbar {
+     --background: #FEC5E5; /* Light pink header */
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+}
+
+.AppointmentList-title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.AppointmentList-content {
+    --background: #FFDFEE;
+}
+
 .list-card {
-    --background: #ffffff;
+    --background: transparent;
+    overflow: hidden;
     margin-bottom: 12px;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    border: 1px solid #eee;
 }
 
 .patient-name {
@@ -20,8 +35,19 @@
 
 .appt-note {
     font-style: italic;
-    color: #888;
+    color: #bcbcbc;
     font-size: 0.85rem;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+  backdrop-filter: blur(4px);
 }
 
 .center {
@@ -39,13 +65,23 @@
 
 .list-card {
     margin-bottom: 12px;
-    --border-radius: 12px;
-    border-left: 6px solid #ccc; /* สีเริ่มต้น */
+    --border-radius: 15px;
+    padding: 8px;
+    color: #fff;
 }
 
-.card-border-warning { border-left-color: #ffc409; }
-.card-border-success { border-left-color: #2dd36f; }
-.card-border-danger { border-left-color: #eb445a; }
+.card-border-warning { 
+    --background: #ffc409; 
+     color: #ffffff;
+}
+.card-border-success { 
+    background: #44d67e; 
+    color: #ffffff;
+}
+.card-border-danger { 
+    background : #ee566a; 
+    color: #ffffff;
+}
 
 .appt-row-details {
     display: flex;

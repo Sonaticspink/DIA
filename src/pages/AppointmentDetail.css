@@ -1,17 +1,25 @@
-:root {
-  --ion-color-primary: #FFD8EE;
-  --ion-color-primary-rgb: 255, 216, 238;
-  --ion-color-primary-contrast: #000000;
-  --ion-color-primary-contrast-rgb: 0, 0, 0;
-  --ion-color-primary-shade: #f0c6d9;
-  --ion-color-primary-tint: #ffe0f2;
+.AppointmentDetail-toolbar {
+     --background: #FEC5E5; /* Light pink header */
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+}
+
+.AppointmentDetail-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+.AppointmentDetail-content {
+    --background: #FFDFEE;
 }
 
 
 .detail-header-card {
-  background: #ff6fb5ff;
+  background: rgb(255, 172, 212);
     padding: 10px;
     box-shadow: 0 4px 15px rgba(255, 98, 183, 0.25);
+    border-radius: 3%;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -25,15 +33,18 @@
 .thai-date-display {
     color: #ffffff;
     font-size: 1.7rem;
-    font-weight: bold;
+    font-weight: 600;
 
 }
 
 .slot-button.available {
-    --border-color: #FF62B7;
-    --color: #FF62B7;
+    background: #ffffff;
+    --border-color: #FF4FA8;
+    --color: #a0006d;
     --background-hover: #FF62B7;
-    --color-hover: #000000;
+    --color-hover: rgb(199, 193, 193);
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .slot-button {
@@ -74,6 +85,8 @@
 .section-title{
      text-align: center;
      font-size: 2.0rem;
+     color: #5a0047;
+     font-weight: 600;
 }
 
 .custom-back-btn {

@@ -47,17 +47,17 @@ const AppointmentDetail: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar color="primary">
+      <IonHeader className="ion-no-border">
+        <IonToolbar className="AppointmentDetail-toolbar">
           <IonButtons slot="start"><IonBackButton defaultHref="/appointment" className="custom-back-btn"/></IonButtons>
-          <IonTitle className="custom-title">เลือกเวลาจอง</IonTitle>
+          <IonTitle className="AppointmentDetail-title">เลือกเวลาจอง</IonTitle>
           <IonButtons slot="end">
             <IonButton routerLink="/appointment-list"><IonIcon icon={listOutline} slot="icon-only" /></IonButton>
           </IonButtons>
         </IonToolbar>
       </IonHeader>
 
-      <IonContent className="ion-padding gray-bg">
+      <IonContent className="ion-padding AppointmentDetail-content">
         <div className="detail-header-card">
           <p className="thai-label">วันนัดหมายของคุณ</p>
           <h1 className="thai-date-display">{thaiFullDate}</h1>

@@ -117,7 +117,7 @@ const AppointmentList: React.FC = () => {
                   <span><IonIcon icon={calendarOutline} /> {new Date(item.appointment_date).toLocaleDateString('th-TH')}</span>
                   <span style={{ marginLeft: '15px' }}><IonIcon icon={timeOutline} /> {item.appointment_time.substring(0, 5)} น.</span>
                 </div>
-                <IonBadge color={getStatusColor(item.status)} style={{ marginTop: '8px' }}>
+                <IonBadge className="status-pill" color={getStatusColor(item.status)} style={{ marginTop: '8px' }}>
                   {item.status || 'รอการยืนยัน'}
                 </IonBadge>
               </IonLabel>
@@ -133,13 +133,13 @@ const AppointmentList: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar color="primary">
+      <IonHeader className="ion-no-border">
+        <IonToolbar className="AppointmentList-toolbar">
           <IonButtons slot="start"><IonBackButton defaultHref="/dashboard" /></IonButtons>
-          <IonTitle>รายการนัดหมายของคุณ</IonTitle>
+          <IonTitle className="AppointmentList-title">รายการนัดหมายของคุณ</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="ion-padding gray-bg">
+      <IonContent className="ion-padding bg-gray">
         <IonAlert isOpen={showAlert} onDidDismiss={() => setShowAlert(false)} header={'ยืนยันการลบ'} message={'คุณแน่ใจหรือไม่ว่าต้องการลบรายการนัดหมายนี้?'} buttons={[{ text: 'ยกเลิก', role: 'cancel' }, { text: 'ลบ', handler: () => { if (selectedId) handleDelete(selectedId); } }]} />
 
         {loading ? (

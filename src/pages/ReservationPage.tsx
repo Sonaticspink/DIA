@@ -93,8 +93,8 @@ const handleConfirm = async () => {
 
   return (
     <IonPage>
-      <IonHeader><IonToolbar color="primary" className="custom-toolbar" ><IonButtons slot="start"><IonBackButton className="custom-back-btn" /></IonButtons><IonTitle className="custom-title" >กรอกข้อมูลการจอง</IonTitle></IonToolbar></IonHeader>
-      <IonContent className="ion-padding gray-bg">
+      <IonHeader className="ion-no-border"><IonToolbar className= "Reservation-toolbar" ><IonButtons slot="start"><IonBackButton className="custom-back-btn" /></IonButtons><IonTitle className="Reservation-title" >กรอกข้อมูลการจอง</IonTitle></IonToolbar></IonHeader>
+      <IonContent className="ion-padding Reservation-content">
         <IonLoading isOpen={loading} message="กำลังโหลด..." />
         <div className="reservation-card">
           <div className="status-badge">สรุปรายละเอียด</div>

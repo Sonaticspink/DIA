@@ -128,7 +128,7 @@ const DoctorAppointmentList: React.FC = () => {
           </IonButtons>
 
           <IonTitle>
-            📅 รายการนัดหมาย
+            รายการนัดหมาย
           </IonTitle>
 
         </IonToolbar>
