@@ -5,7 +5,7 @@
 }
 
 .doc-slot-bg {
-    --background: #ffffff;
+    --background: #FFDFEE;
 }
 
 .doc-slot-instruction {
@@ -17,10 +17,10 @@
 }
 
 .toggle-btn {
-    height: 70px;
-    margin-bottom: 10px;
+    height: 90px;
+    margin-bottom: 20px;
     --border-radius: 12px;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: bold;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }

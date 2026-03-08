@@ -1,11 +1,11 @@
 .doctor-header {
-    --background: #fbc6e3; /* Light pink header */
+    --background: #FEC5E5; /* Light pink header */
     --padding-top: 15px;
     --padding-bottom: 15px;
 }
 
 .doctor-title {
-    font-size: 1.6rem;
+    font-size: 2.2rem;
     font-weight: bold;
     color: #000;
 }
@@ -18,7 +18,7 @@
 }
 
 .doctor-bg {
-    --background: #ffffff;
+    --background: #FFDFEE;
 }
 
 .button-container-doctor {
