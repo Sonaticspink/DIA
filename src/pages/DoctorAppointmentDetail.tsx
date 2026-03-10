@@ -91,7 +91,7 @@ const DoctorAppointmentDetail: React.FC = () => {
 
     <div className="info-row">
       <span className="info-label">เบอร์โทร</span>
-      <span className="info-value">{appt.patient_phone}</span>
+      <span className="info-value">0{appt.patient_phone}</span>
     </div>
 
     <div className="status-display-box">
