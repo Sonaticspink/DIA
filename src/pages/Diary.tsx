@@ -15,15 +15,15 @@ import { useHistory } from "react-router-dom";
 import DiaryNavBar from "../components/DiaryNavBar";
 
 const foodOptions = [
-  { id: 1, name: "ข้าวผัด", img: "../assets/Diary/foods/01.jpg" },
-  { id: 2, name: "ข้าวราดแกง", img: "../assets/Diary/foods/02.jpg" },
-  { id: 3, name: "ก๋วยเตี๋ยว", img: "../assets/Diary/foods/03.jpg" },
-  { id: 4, name: "ข้าวไข่เจียว", img: "../assets/Diary/foods/04.jpg" },
-  { id: 5, name: "ส้มตำ", img: "../assets/Diary/foods/05.jpg" },
-  { id: 6, name: "ผัดไทย", img: "../assets/Diary/foods/06.jpg" },
-  { id: 7, name: "ผัดกะเพรา", img: "../assets/Diary/foods/07.jpg" },
-  { id: 8, name: "ข้าวมันไก่", img: "../assets/Diary/foods/08.jpg" },
-  { id: 9, name: "ข้าวซอย", img: "../assets/Diary/foods/09.jpg" },
+  { id: 1, name: "ข้าวผัด", img: "../../assets/Diary/foods/01.jpg" },
+  { id: 2, name: "ข้าวราดแกง", img: "../../assets/Diary/foods/02.jpg" },
+  { id: 3, name: "ก๋วยเตี๋ยว", img: "../../assets/Diary/foods/03.jpg" },
+  { id: 4, name: "ข้าวไข่เจียว", img: "../../assets/Diary/foods/04.jpg" },
+  { id: 5, name: "ส้มตำ", img: "../../assets/Diary/foods/05.jpg" },
+  { id: 6, name: "ผัดไทย", img: "../../assets/Diary/foods/06.jpg" },
+  { id: 7, name: "ผัดกะเพรา", img: "../../assets/Diary/foods/07.jpg" },
+  { id: 8, name: "ข้าวมันไก่", img: "../../assets/Diary/foods/08.jpg" },
+  { id: 9, name: "ข้าวซอย", img: "../../assets/Diary/foods/09.jpg" },
 ];
 const hobbyOptions = [
   { id: "ออกกำลังกาย", label: "ออกกำลังกาย", icon: "🏋️" },
