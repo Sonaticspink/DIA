@@ -8,3 +8,58 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-primary-shade: #f0c6d9;
   --ion-color-primary-tint: #ffe0f2;
 }
+
+/* ===============================
+   Ultimate Ionic iOS Fix
+   =============================== */
+
+/* ป้องกัน iPhone ขยาย font เอง */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ใช้ box sizing แบบเสถียร */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Safe area สำหรับ notch */
+ion-header ion-toolbar {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* Safe area ด้านล่าง (home indicator) */
+ion-content::part(scroll) {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* ป้องกัน 100vh bug ใน iOS */
+ion-content {
+  min-height: 100dvh;
+}
+
+/* ป้องกัน keyboard ดัน layout */
+ion-app, ion-page {
+  height: 100%;
+}
+
+/* ป้องกัน scroll bounce layout shift */
+html, body {
+  overscroll-behavior-y: none;
+}
+
+/* ป้องกัน react-calendar overflow บน iOS */
+.react-calendar {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* tile calendar ไม่ล้น */
+.react-calendar__tile {
+  min-height: 70px;
+}
+
+/* ป้องกัน flex bug */
+ion-content > * {
+  flex-shrink: 0;
+}

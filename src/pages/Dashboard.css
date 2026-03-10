@@ -1,49 +1,64 @@
+/* iOS font scaling fix */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Toolbar */
 .dashboard-toolbar {
-     --background: #FEC5E5; /* Light pink header */
-    --padding-top: 15px;
-    --padding-bottom: 15px;
+  --background: #FEC5E5;
+  --padding-top: calc(env(safe-area-inset-top) + 10px);
+  --padding-bottom: 10px;
 }
 
+/* Title */
 .dashboard-title {
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: #000;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #000;
 }
 
+/* Avatar */
 .user-avatar {
-    border: 3px solid #ff0080; /* Bright pink border */
-    width: 55px;
-    height: 55px;
-    margin-right: 15px;
+  border: 3px solid #ff0080;
+  width: 55px;
+  height: 55px;
+  margin-right: 15px;
 }
 
-.dashboard-content {
-    --background: #FFDFEE;
+/* Content background */
+ion-content.dashboard-content {
+  --background: #FFDFEE;
 }
 
+/* Button container */
 .button-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    height: 80%; /* Centers buttons vertically */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 30px;
+
+  /* fix iOS height bug */
+  min-height: 80%;
 }
 
+/* Dashboard buttons */
 .dash-button {
-    --background: #ff69b4;
-    --background-activated: #ff1493;
-    --border-radius: 50px;
-    --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    width: 90%;
-    height: 80px;
-    font-size: 2.5rem;
-    font-weight: bold;
+  --background: #ff69b4;
+  --background-activated: #ff1493;
+  --border-radius: 50px;
+  --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+  width: 90%;
+  height: 80px;
+
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
-/* Style for the icons inside buttons */
+/* Icon inside button */
 .dash-button ion-icon {
-    font-size: 2rem;
-    margin-right: 10px;
+  font-size: 2rem;
+  margin-right: 10px;
 }
-

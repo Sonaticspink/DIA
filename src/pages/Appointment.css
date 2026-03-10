@@ -1,7 +1,7 @@
 .Appointment-toolbar {
-     --background: #FEC5E5; /* Light pink header */
-    --padding-top: 15px;
-    --padding-bottom: 15px;
+     --background: #FEC5E5;
+  --padding-top: calc(env(safe-area-inset-top) + 10px);
+  --padding-bottom: 10px;
 }
 
 .Appointment-title {
@@ -35,7 +35,8 @@
 }
 
 .react-calendar__tile {
-  height: 80px;
+  min-height: 80px;
+  height: auto;
   padding: 10px 0;
   overflow: visible !important;
   text-overflow: unset !important;
