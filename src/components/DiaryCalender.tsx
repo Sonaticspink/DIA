@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./DiaryCalender.css";
-import { IonPage, IonContent } from "@ionic/react";
+import { IonContent } from "@ionic/react";
 import { supabase } from "../supabaseClient";
 
 const DiaryCalender: React.FC = () => {
@@ -92,8 +92,7 @@ const DiaryCalender: React.FC = () => {
   };
 
   return (
-    <IonPage>
-      <IonContent fullscreen className="calendar-content">
+      <div className="calendar-content">
         <div className="calendar-container">
           <h2 className="month-title">
             {today.toLocaleString("default", { month: "long" })} {year}
@@ -111,8 +110,7 @@ const DiaryCalender: React.FC = () => {
 
           <div className="calendar-grid">{renderDays()}</div>
         </div>
-      </IonContent>
-    </IonPage>
+      </div>
   );
 };
 

@@ -11,6 +11,7 @@ import DiaryCalender from "../components/DiaryCalender";
 const Calender: React.FC = () => {
   const history = useHistory();
   const [value, setValue] = useState<Date>(new Date());
+  const currentDay = new Intl.DateTimeFormat('th-TH', { weekday: 'long' }).format(new Date());
 
   // 🔒 FIX: format วันที่จาก Local Time (ไม่ใช้ toISOString)
   const formatDate = (date: Date) => {
@@ -43,7 +44,7 @@ const Calender: React.FC = () => {
         style={{ paddingBottom: 110 }} // กัน bottom nav บัง
       >
         {/* Welcome */}
-        <h2 className="welcome-text large-title">สวัสดีวันจันทร์</h2>
+        <h2 className="welcome-text large-title">สวัสดี{currentDay}</h2>
 
         {/* Calendar Card */}
         <DiaryCalender />
