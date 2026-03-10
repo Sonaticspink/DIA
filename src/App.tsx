@@ -17,6 +17,15 @@ import DoctorCalendar from './pages/DoctorCalendar';
 import DoctorSlotManager from './pages/DoctorSlotManager';
 import DoctorAppointmentList from './pages/DoctorAppointmentList';
 import DoctorAppointmentDetail from './pages/DoctorAppointmentDetail';
+import DRPatientDetail from "./pages/DR_PatientDetail";
+import DRDashboard from "./pages/DR_dashboard";
+import Calender from "./pages/Calender";
+import Diary from "./pages/Diary";
+import History from "./pages/History";
+import Report from "./pages/Report";
+import Contact from "./pages/Contact";
+import DRPatientHistory from './pages/DRPatientHistory';
+import DR_PatientList from './pages/DR_PatientList';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -36,6 +45,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/signup">
           <Signup />
+        </Route>
+        <Route exact path="/contact">
+          <Contact />
         </Route>
         <Route exact path="/appointment">
           <Appointment />
@@ -58,6 +70,9 @@ const App: React.FC = () => (
         <Route exact path="/drug-detail/:id">
           <DrugDetail /> 
         </Route>
+        <Route exact path="/DRPatientHistory">
+          <DRPatientHistory />
+        </Route>
         <Route exact path="/appointment-list">
           <AppointmentList />
         </Route>
@@ -76,8 +91,35 @@ const App: React.FC = () => (
         <Route exact path="/doctor/appointments">
           <DoctorAppointmentList />
         </Route>
+        <Route exact path="/DR_PatientList">
+          <DR_PatientList />
+        </Route>
+        <Route exact path="/report">
+          <Report />
+        </Route>
         <Route exact path="/doctor/appointment-detail/:id">
           <DoctorAppointmentDetail />
+        </Route>
+        <Route exact path="/doctor/patient-detail">
+          <DRPatientDetail />
+        </Route>
+        <Route exact path="/doctor/patient-detail/:patientId">
+          <DRPatientDetail />
+        </Route>
+        <Route exact path="/doctor/pain-chart">
+          <DRDashboard />
+        </Route>
+        <Route exact path="/doctor/pain-chart/:patientId">
+          <DRDashboard />
+        </Route>
+        <Route exact path="/calender">
+          <Calender />
+        </Route>
+        <Route exact path="/diary">
+          <Diary />
+        </Route>
+        <Route exact path="/history">
+          <History />
         </Route>
         <Route exact path="/">
           <Redirect to="/home" />

@@ -1,0 +1,71 @@
+.cd-toolbar {
+  --background: #ffffff;
+  --border-color: transparent;
+}
+
+.cd-content {
+  --background: #f6f6f8;
+}
+
+.cd-wrap {
+  padding: 18px 18px 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cd-title {
+  margin: 10px 0 2px;
+  font-size: 34px;
+  font-weight: 900;
+  color: #111;
+}
+
+.cd-sub {
+  margin: 0 0 14px;
+  opacity: 0.7;
+}
+
+.cd-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 920px) {
+  .cd-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Desktop: ซ่อน Topbar */
+@media (min-width: 992px) {
+  .cd-topbar {
+    display: none;
+  }
+
+  /* กัน content โดนกินพื้นที่ header (บางธีมจะมี offset) */
+  ion-content.cd-content {
+    --offset-top: 0px;
+  }
+}
+
+.cd-toolbar {
+  --background: #ffffff;      /* พื้นหลัง topbar */
+  --color: #111111;           /* สี title */
+}
+
+/* hamburger icon */
+.cd-toolbar ion-menu-button {
+  color: #111111;
+}
+
+/* title */
+.cd-toolbar ion-title {
+  color: #111111;
+  font-weight: 800;
+}
+
+.large-title {
+  font-size: 32px;
+  font-weight: 700;
+}

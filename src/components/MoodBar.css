@@ -1,0 +1,235 @@
+/* ===== MoodBar ===== */
+.mood-bar-card {
+  background: white;
+  border-radius: 24px;
+  padding: 20px 18px 18px;
+  border: 1px solid #ffe4e8;
+  color: #333;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.mood-bar-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.mood-bar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.mood-bar-head h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  background: linear-gradient(135deg, #e91e63, #f06292);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Emoji grid ── */
+.mood-bar-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+  background: #fff7fb;
+  border-radius: 16px;
+  padding: 16px 12px;
+  border: 1px solid #fce4ec;
+}
+
+.mood-bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.3s ease;
+}
+
+.mood-emoji {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  filter: grayscale(0.5) opacity(0.5);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.mood-emoji.active {
+  filter: none;
+  border-color: #e91e63;
+  transform: scale(1.15);
+  box-shadow: 0 4px 16px rgba(233, 30, 99, 0.25);
+}
+
+.mood-emoji.tone-5 {
+  background: #fff9c4;
+}
+.mood-emoji.tone-4 {
+  background: #c8e6c9;
+}
+.mood-emoji.tone-3 {
+  background: #e0f7fa;
+}
+.mood-emoji.tone-2 {
+  background: #ffe0b2;
+}
+.mood-emoji.tone-1 {
+  background: #ffcdd2;
+}
+
+.mood-emoji-label {
+  font-size: 0.7rem;
+  color: #888;
+  line-height: 1;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.mood-emoji-label.active {
+  color: #e91e63;
+}
+
+.mood-percent {
+  min-width: 44px;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #888;
+  background: #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.mood-percent.active {
+  color: #fff;
+  background: linear-gradient(135deg, #e91e63, #f06292);
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.25);
+  transform: scale(1.05);
+}
+
+/* ── Progress Section ── */
+.mood-bar-progress-section {
+  margin-top: 20px;
+}
+
+.mood-progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.progress-text {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.progress-value {
+  font-size: 0.95rem;
+  color: #e91e63;
+  font-weight: 700;
+  background: #fff0f6;
+  padding: 2px 10px;
+  border-radius: 12px;
+  border: 1px solid #fce4ec;
+}
+
+/* ── Progress bar ── */
+.mood-total-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #fce4ec 0%, #ffe4e8 100%);
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.mood-total-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #e91e63 0%, #f06292 50%, #ff80ab 100%);
+  border-radius: 999px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 8px rgba(233, 30, 99, 0.4);
+  position: relative;
+}
+
+.mood-total-fill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent
+  );
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 420px) {
+  .mood-bar-head h2 {
+    font-size: 1.3rem;
+  }
+  .mood-bar-grid {
+    gap: 10px;
+    padding: 14px 10px;
+  }
+  .mood-emoji {
+    width: 46px;
+    height: 46px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .mood-bar-card {
+    padding: 16px 14px;
+  }
+  .mood-bar-head h2 {
+    font-size: 1.2rem;
+  }
+  .mood-bar-grid {
+    gap: 8px;
+    padding: 12px 8px;
+  }
+  .mood-emoji {
+    width: 42px;
+    height: 42px;
+    font-size: 1.4rem;
+  }
+  .mood-percent {
+    min-width: 38px;
+    font-size: 0.68rem;
+    padding: 4px 8px;
+  }
+  .mood-total-track {
+    height: 28px;
+  }
+}

@@ -2,21 +2,18 @@ import {
   IonContent, IonPage, IonHeader, IonToolbar, 
   IonTitle, IonButton, IonIcon, IonAvatar, IonButtons 
 } from '@ionic/react';
-import { book, calendar, medical, logOutOutline } from 'ionicons/icons';
+import { book, calendar, medical, logOutOutline, documentTextOutline } from 'ionicons/icons';
 import './Dashboard.css';
 import { useHistory } from 'react-router-dom';
-import { supabase } from '../supabaseClient';
+import { supabase } from '../supabaseClient'; 
 
 const Dashboard: React.FC = () => {
     const history = useHistory();
 
-    // ดึงชื่อวันปัจจุบันภาษาไทย (เช่น วันจันทร์, วันอังคาร)
-    const currentDay = new Intl.DateTimeFormat('th-TH', { weekday: 'long' }).format(new Date());
-
     const handleLogout = async () => {
         const { error } = await supabase.auth.signOut();
         if (!error) {
-            history.push('/home'); // กลับไปหน้าล็อกอิน
+            history.push('/home'); 
         } else {
             alert("Error logging out: " + error.message);
         }
@@ -26,9 +23,9 @@ const Dashboard: React.FC = () => {
     <IonPage>
       <IonHeader className="ion-no-border">
         <IonToolbar className="dashboard-toolbar">
-          {/* แสดงผลชื่อวันแบบไดนามิก */}
-          <IonTitle className="dashboard-title">สวัสดี{currentDay}</IonTitle>
+          <IonTitle className="dashboard-title">สวัสดีวันจันทร์</IonTitle>
           
+          {/* Logout Button and Avatar Group */}
           <IonButtons slot="end">
             <IonButton onClick={handleLogout} color="danger">
               <IonIcon slot="icon-only" icon={logOutOutline} />
@@ -42,7 +39,7 @@ const Dashboard: React.FC = () => {
 
       <IonContent className="ion-padding dashboard-content">
         <div className="button-list">
-          <IonButton routerLink="/diary" expand="block" className="dash-button">
+          <IonButton routerLink='/calender' expand="block" className="dash-button">
             <IonIcon slot="start" icon={book} />
             บันทึก
           </IonButton>
@@ -56,6 +53,7 @@ const Dashboard: React.FC = () => {
              <IonIcon slot="start" icon={medical} />
              ยารักษา
           </IonButton>
+
         </div>
       </IonContent>
     </IonPage>

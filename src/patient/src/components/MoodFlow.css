@@ -1,0 +1,247 @@
+/* ===== Mood Flow Card ===== */
+.mood-flow-card {
+  background: white;
+  border-radius: 20px;
+  padding: 18px 16px 14px;
+  border: 1px solid #ffe4e8;
+  color: #333;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.mood-flow-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.mood-flow-head h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.mood-flow-count {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #e91e63;
+  background: #fce4ec;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+/* ── Empty ── */
+.mood-flow-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px 16px;
+  gap: 8px;
+}
+.mood-flow-empty-icon {
+  font-size: 2.4rem;
+  opacity: 0.6;
+}
+.mood-flow-empty p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #888;
+}
+
+/* ── Chart body ── */
+.mood-flow-body {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.mood-flow-y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 14px 0;
+  flex-shrink: 0;
+  width: 24px;
+}
+.mood-flow-y-label {
+  font-size: 0.85rem;
+  line-height: 1;
+  text-align: center;
+}
+
+/* ── Scrollable chart ── */
+.mood-flow-scroll {
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #f7c1d9 transparent;
+}
+.mood-flow-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+.mood-flow-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.mood-flow-scroll::-webkit-scrollbar-thumb {
+  background: #f7c1d9;
+  border-radius: 4px;
+}
+
+.mood-flow-canvas {
+  min-width: 100%;
+}
+.mood-flow-svg {
+  width: 100%;
+  height: 140px;
+  display: block;
+}
+
+/* ── Grid lines ── */
+.mood-flow-gridline {
+  stroke: #f0e4e8;
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+.mood-flow-gridline-v {
+  stroke: #f5eef0;
+  stroke-width: 1;
+}
+
+/* ── Line + Points ── */
+.mood-flow-path {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.mood-flow-point-ring {
+  fill: rgba(233, 30, 99, 0.15);
+  stroke: none;
+}
+.mood-flow-point {
+  fill: #e91e63;
+  stroke: white;
+  stroke-width: 1.5;
+}
+
+/* ── X-axis ── */
+.mood-flow-labels {
+  display: flex;
+  margin-top: 6px;
+}
+.mood-flow-day {
+  color: #888;
+  font-size: 0.65rem;
+  font-weight: 500;
+  line-height: 1;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* ── Stats ── */
+.mood-stats-section {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #ffe4e8;
+}
+.mood-stats-row {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.mood-stat-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: #fff7fb;
+  border-radius: 14px;
+  border: 1px solid #ffe4e8;
+}
+.mood-stat-emoji {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.mood-stat-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+  font-weight: 600;
+}
+.mood-stat-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+.mood-stat-label {
+  color: #888;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+.mood-stat-value {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.mood-stat-value small {
+  font-size: 0.65rem;
+  opacity: 0.5;
+  font-weight: 500;
+}
+
+/* ── Trend colors ── */
+.mood-stat-box.trend-up {
+  background: #f0faf1;
+  border-color: #c8e6c9;
+}
+.mood-stat-box.trend-up .mood-stat-icon,
+.mood-stat-box.trend-up .mood-stat-value {
+  color: #43a047;
+}
+
+.mood-stat-box.trend-down {
+  background: #fef5f5;
+  border-color: #ffcdd2;
+}
+.mood-stat-box.trend-down .mood-stat-icon,
+.mood-stat-box.trend-down .mood-stat-value {
+  color: #e53935;
+}
+
+.mood-stat-box.trend-same {
+  background: #f5f5f5;
+  border-color: #e0e0e0;
+}
+.mood-stat-box.trend-same .mood-stat-icon {
+  color: #9e9e9e;
+}
+.mood-stat-box.trend-same .mood-stat-value {
+  color: #757575;
+}
+
+/* ── Responsive ── */
+@media (max-width: 420px) {
+  .mood-stats-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .mood-flow-card {
+    padding: 14px 12px 12px;
+  }
+  .mood-flow-svg {
+    height: 120px;
+  }
+  .mood-flow-y-label {
+    font-size: 0.75rem;
+  }
+}

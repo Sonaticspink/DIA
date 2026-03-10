@@ -1,0 +1,70 @@
+.manage-drugs-header {
+    --background: #fbc6e3; /* Pink theme from dashboard */
+    --color: #000;
+}
+
+.manage-drugs-bg {
+    --background: #ffffff;
+}
+
+.drug-management-list {
+    padding: 10px;
+    background: transparent;
+}
+
+.drug-item-card {
+    --padding-start: 10px;
+    --inner-padding-end: 10px;
+    margin-bottom: 10px;
+    --background: #fff;
+    border: 1px solid #fbc6e3;
+    border-radius: 12px;
+}
+
+.drug-thumb-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.drug-list-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.drug-name-text {
+    font-weight: bold;
+    color: #ff0080; /* Matching bright pink accents */
+    font-size: 1.1rem;
+}
+
+.drug-usage-preview {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.pink-fab {
+    --background: #ff70c1;
+    --color: white;
+}
+
+.modal-header-pink {
+    --background: #fbc6e3;
+}
+
+.input-group-pink {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pink-save-btn {
+    margin-top: 30px;
+    --background: #ff70c1;
+    --border-radius: 25px;
+    height: 50px;
+    font-weight: bold;
+}

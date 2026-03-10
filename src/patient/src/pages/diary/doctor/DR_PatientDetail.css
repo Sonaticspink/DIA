@@ -1,0 +1,430 @@
+/* ── Toolbar & Header ── */
+.dr-patient-detail-toolbar {
+  --background: #ecd6e2;
+}
+.dr-back-button {
+  --color: #b300a4;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.dr-chart-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  color: #e91e63;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+.dr-chart-btn:hover {
+  background: rgba(233, 30, 99, 0.08);
+}
+.dr-chart-btn ion-icon {
+  font-size: 1.2rem;
+}
+.dr-page-title {
+  color: #173554;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: end;
+  padding-right: 8px;
+}
+.dr-patient-detail-content {
+  --background: linear-gradient(180deg, #fff 0%, #fff6fb 100%);
+}
+
+/* ── Loading ── */
+.dr-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+}
+
+/* ── Calendar Card ── */
+.dr-daily-sheet {
+  max-width: 860px;
+  margin: 0 auto 16px;
+  padding: 14px;
+  border-radius: 20px;
+  border: 2px solid #d8e4f5;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(15, 36, 66, 0.08);
+}
+
+/* ── Month Switcher ── */
+.dr-month-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.dr-round-nav {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid #f0dce7;
+  background: #fff3f8;
+  color: #cf4f8c;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(207, 79, 140, 0.16);
+  transition: transform 0.15s ease;
+}
+.dr-round-nav:active {
+  transform: scale(0.96);
+}
+.dr-round-nav ion-icon {
+  font-size: 1rem;
+}
+.dr-month-chip {
+  min-width: 162px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid #efdee8;
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(17, 39, 68, 0.1);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #313c4d;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+.dr-month-chip:active {
+  transform: scale(0.98);
+}
+.dr-month-chip-icon {
+  color: #ff4f8f;
+  font-size: 1rem;
+}
+
+/* ── Calendar Grid ── */
+.dr-weekdays,
+.dr-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+.dr-weekdays {
+  margin-bottom: 8px;
+}
+.dr-weekdays span {
+  text-align: center;
+  color: #4d6988;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+.dr-calendar-grid {
+  gap: 8px 4px;
+}
+.dr-day-cell {
+  border: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+}
+.dr-day-cell.muted {
+  opacity: 0.5;
+}
+.dr-day-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid #c9d7eb;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #9faec2;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.dr-day-circle.good {
+  border-color: #85c58b;
+  color: #3c9c49;
+  background: #f3fff3;
+}
+.dr-day-circle.bad {
+  border-color: #f08a8a;
+  color: #d54242;
+  background: #fff3f3;
+}
+.dr-day-circle.none {
+  background: #fff;
+}
+.dr-day-circle.selected {
+  border-color: #ff70c1;
+  box-shadow: 0 0 0 4px rgba(255, 112, 193, 0.2);
+  transform: scale(1.04);
+}
+.dr-day-circle ion-icon {
+  font-size: 1.05rem;
+}
+.dr-day-number {
+  font-size: 0.83rem;
+  color: #173554;
+  font-weight: 600;
+}
+
+/* ── Legend ── */
+.dr-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+.dr-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #445f7a;
+  font-size: 0.8rem;
+}
+.dr-legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dr-legend .good {
+  background: #5eb869;
+}
+.dr-legend .bad {
+  background: #eb5b5b;
+}
+.dr-legend .none {
+  background: #c7d4e7;
+}
+
+/* ── Month Summary ── */
+.dr-month-summary {
+  margin-top: 14px;
+  border-top: 1px dashed #d2deef;
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.dr-month-summary div {
+  border-radius: 10px;
+  background: #f8fbff;
+  border: 1px solid #dbe6f5;
+  padding: 9px 10px;
+  text-align: center;
+}
+.dr-month-summary strong {
+  display: block;
+  color: #17385b;
+  font-size: 1.15rem;
+}
+.dr-month-summary small {
+  color: #607b98;
+  font-size: 0.78rem;
+}
+
+/* ── Daily Detail ── */
+.dr-daily-detail {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid #dbe4f2;
+  background: #fff;
+}
+.dr-detail-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.dr-detail-head h3 {
+  margin: 0;
+  color: #163456;
+  font-size: 1.05rem;
+}
+.dr-detail-date {
+  margin: 8px 0 12px;
+  color: #516f8f;
+  font-size: 0.9rem;
+}
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 88px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.status-pill.good {
+  background: #e9f9ea;
+  color: #318f3d;
+}
+.status-pill.bad {
+  background: #ffeaea;
+  color: #ce3d3d;
+}
+.status-pill.none {
+  background: #eff4fb;
+  color: #597595;
+}
+.dr-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.dr-detail-item {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #e1e9f4;
+  background: #fbfdff;
+}
+.dr-detail-item.full {
+  grid-column: 1 / -1;
+}
+.dr-detail-item label {
+  display: block;
+  color: #5e7895;
+  font-size: 0.76rem;
+  margin-bottom: 4px;
+}
+.dr-detail-item p {
+  margin: 0;
+  color: #1b3a5b;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  word-break: break-word;
+}
+.dr-empty-detail {
+  border-radius: 12px;
+  border: 1px dashed #cad8eb;
+  color: #5c7895;
+  background: #f8fbff;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.dr-empty-detail ion-icon {
+  font-size: 1.4rem;
+}
+.dr-error-text {
+  max-width: 860px;
+  margin: 10px auto 0;
+  font-size: 0.85rem;
+  color: #c13a3a;
+}
+
+ion-modal.dr-date-picker-modal-wrapper {
+  --background: transparent;
+  --backdrop-opacity: 0.35;
+  --box-shadow: none;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Date Picker Modal ── */
+.dr-date-picker-modal {
+  background: #fff;
+  border-radius: 22px;
+  padding: 24px;
+  width: 90%;
+  max-width: 350px;
+  margin: auto;
+  box-shadow: 0 14px 40px rgba(233, 30, 99, 0.3);
+  border: 2px solid #f8d5e4;
+}
+.dr-picker-title {
+  margin: 0 0 22px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #36363a;
+}
+.dr-picker-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.dr-picker-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dr-picker-select {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 4px 0;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #3f3f44;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.dr-picker-underline {
+  height: 2px;
+  background: #f6d8e3;
+  width: 100%;
+}
+.dr-picker-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.dr-picker-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.dr-picker-btn-cancel {
+  background: #efefef;
+  color: #666;
+  border: 1px solid #e2e2e2;
+}
+.dr-picker-btn-ok {
+  background: linear-gradient(135deg, #ea3f82 0%, #f05b99 100%);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(234, 63, 130, 0.3);
+}
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+  .dr-day-circle {
+    width: 38px;
+    height: 38px;
+  }
+  .dr-day-number {
+    font-size: 0.78rem;
+  }
+  .dr-detail-grid {
+    grid-template-columns: 1fr;
+  }
+  .dr-picker-title {
+    font-size: 1.75rem;
+  }
+  .dr-picker-select {
+    font-size: 1.65rem;
+  }
+}

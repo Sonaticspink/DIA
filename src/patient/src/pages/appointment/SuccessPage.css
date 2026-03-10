@@ -1,0 +1,42 @@
+.success-background {
+    --background: linear-gradient(to bottom, #ffe4f0 0%, #ffffff 100%);
+}
+.success-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+.success-logo{
+    width: 150px; /* Slightly smaller to fit more inputs on screen */
+    margin-bottom: 15px;
+}
+
+.ok-btn {
+  --background: #ff69b4;
+  --background-hover: #9f0085ff;
+  --background-activated: #ff1493;
+}
+
+
+.big-check {
+    font-size: 150px;
+    margin-bottom: 15px;
+}
+
+.receipt-summary {
+    width: 60%;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 30px 0;
+}
+
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}

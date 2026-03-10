@@ -1,0 +1,24 @@
+.doc-calendar-header {
+    --background: #fbc6e3; /* Pink theme */
+    --color: #000;
+}
+
+.doc-calendar-bg {
+    --background: #fdf2f8;
+}
+
+.doc-calendar-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.doc-hint-text {
+    text-align: center;
+    margin-top: 25px;
+    color: #ff0080;
+    font-weight: bold;
+}

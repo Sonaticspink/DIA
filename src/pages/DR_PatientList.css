@@ -1,0 +1,46 @@
+.patient-bg{
+  --background:#f4f5f8;
+  padding:16px;
+}
+
+.patient-card{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  background:white;
+
+  padding:16px;
+  margin-bottom:14px;
+
+  border-radius:14px;
+
+  box-shadow:0px 4px 12px rgba(0,0,0,0.08);
+}
+
+.patient-info{
+  display:flex;
+  flex-direction:column;
+}
+
+.patient-name{
+  font-size:16px;
+  font-weight:600;
+}
+
+.patient-phone{
+  font-size:14px;
+  color:#666;
+}
+
+.patient-card{
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.patient-card ion-avatar{
+  width: 50px;
+  height: 50px;
+}

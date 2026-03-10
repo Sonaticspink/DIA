@@ -1,0 +1,41 @@
+.doc-slot-header {
+    --background: #fbc6e3;
+    --color: #000;
+}
+
+.doc-slot-bg {
+    --background: #ffffff;
+}
+
+.doc-slot-instruction {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff70c1;
+}
+
+.toggle-btn {
+    height: 70px;
+    margin-bottom: 10px;
+    --border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.toggle-btn.is-locked {
+    --background: #ff4d4d; /* Red for locked */
+    --color: white;
+}
+
+.toggle-btn.is-available {
+    --background: #2dd36f; /* Green for available */
+    --color: white;
+}
+
+.doc-spinner {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}

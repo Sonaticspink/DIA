@@ -1,0 +1,77 @@
+.dr-card {
+  border-radius: 16px;
+  margin-bottom: 16px;
+  transition: 0.2s;
+}
+
+.dr-card:hover {
+  transform: translateY(-2px);
+}
+
+/* risk colors */
+
+.dr-card.high {
+  border-left: 6px solid #ff4d4f;
+}
+
+.dr-card.medium {
+  border-left: 6px solid #faad14;
+}
+
+.dr-card.low {
+  border-left: 6px solid #52c41a;
+}
+
+/* header */
+
+.dr-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.dr-patient {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.dr-date {
+  font-size: 20px;
+  color: gray;
+}
+
+/* emotion */
+
+.dr-emotion {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 14px;
+}
+
+.emotion-box {
+  text-align: center;
+}
+
+.emoji {
+  font-size: 28px;
+}
+
+/* grid */
+
+.dr-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.dr-item p {
+  margin-top: 4px;
+}
+
+/* responsive */
+
+@media (max-width: 768px) {
+  .dr-grid {
+    grid-template-columns: 1fr;
+  }
+}

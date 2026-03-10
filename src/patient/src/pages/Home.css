@@ -1,0 +1,75 @@
+/* Gradient Background */
+.login-background {
+    --background: linear-gradient(to bottom, #ffe4f0 0%, #ffffff 100%);
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+}
+
+.logo-section {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.login-title {
+    color: #4a4a4a;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    width: 100%;
+    max-width: 320px;
+}
+
+/* Rounded, light pink inputs */
+.custom-input {
+    --background: #fce4ec;
+    --border-radius: 12px;
+    --padding-start: 15px;
+    margin-bottom: 15px;
+    min-height: 50px;
+    border: 1px solid #f8bbd0;
+}
+
+.forgot-password {
+    text-align: right;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
+
+/* Bright pink buttons */
+.main-button {
+    --background: #ff69b4;
+    --background-activated: #ff1493;
+    --border-radius: 25px;
+    --box-shadow: none;
+    height: 50px;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.button-group {
+    width: 100%;
+    max-width: 320px;
+}
+
+.footer-text {
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.register-link {
+    color: #ff69b4;
+    font-weight: bold;
+    cursor: pointer;
+}

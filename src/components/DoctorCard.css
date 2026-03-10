@@ -1,0 +1,168 @@
+.docCard {
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.docHead {
+  height: 110px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 16px 18px;
+  background: linear-gradient(90deg, #e91e63, #ff4aa2);
+}
+
+.docAvatar {
+  width: 62px;
+  height: 62px;
+  border-radius: 999px;
+  border: 3px solid rgba(255, 255, 255, 0.35);
+  object-fit: cover;
+  background: #fff;
+}
+
+.docMeta {
+  color: #fff;
+}
+
+.docName {
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.docSpec {
+  opacity: 0.9;
+  margin-top: 6px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.docBody {
+  padding: 16px 18px 18px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+}
+
+.rowLeft {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.rowIcon.pink {
+  color: #e91e63;
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+.rowTitle {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+.rowValue {
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.rowRight {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btnLight {
+  --border-radius: 12px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+}
+
+.btnPink {
+  --background: #e91e63;
+  --border-radius: 12px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.08);
+  margin: 14px 0;
+}
+
+.rowLine {
+  align-items: flex-start;
+}
+
+.lineIcon {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+}
+
+.lineIdRow {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.iconBtn {
+  --padding-start: 6px;
+  --padding-end: 6px;
+  height: 26px;
+}
+
+.qrBox {
+  width: 170px;
+  min-width: 170px;
+  background: #f7f7f8;
+  border-radius: 14px;
+  padding: 10px;
+  text-align: center;
+}
+
+.qrImg {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.qrHint {
+  margin-top: 8px;
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+@media (max-width: 520px) {
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .rowRight {
+    width: 100%;
+  }
+  .qrBox {
+    width: 100%;
+    min-width: 0;
+    margin-top: 12px;
+  }
+  .qrImg {
+    width: 180px;
+    height: 180px;
+  }
+}

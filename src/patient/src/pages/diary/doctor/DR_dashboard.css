@@ -1,0 +1,433 @@
+/* ── Toolbar ── */
+.dr-dash-toolbar {
+  --background: #ecd6e2;
+}
+.dr-dash-back {
+  --color: #b300a4;
+  font-weight: 700;
+}
+.dr-dash-title {
+  color: #173554;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: end;
+  padding-right: 8px;
+}
+.dr-dash-content {
+  --background: linear-gradient(180deg, #fff 0%, #fff6fb 100%);
+}
+
+/* ── Loading ── */
+.dr-dash-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+}
+
+/* ── Patient name ── */
+.dr-dash-patient-name {
+  color: #516f8f;
+  font-size: 0.9rem;
+  margin: 0 0 14px;
+}
+.dr-dash-patient-name strong {
+  color: #173554;
+}
+
+/* ── Tabs (same as Report) ── */
+.report-mode-tabs {
+  display: flex;
+  gap: 8px;
+  background: #fce4ec;
+  border-radius: 14px;
+  padding: 5px;
+  margin-bottom: 14px;
+}
+.report-mode-tabs button {
+  flex: 1;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #c2677a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.report-mode-tabs button.active {
+  background: #e91e63;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.3);
+}
+
+/* ── Period selector (same as Report) ── */
+.report-period-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.period-nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #ffe4e8;
+  background: white;
+  color: #e91e63;
+  font-size: 1.5rem;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+.period-nav-btn:hover:not(:disabled) {
+  background: #fff0f6;
+  transform: scale(1.05);
+}
+.period-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.report-period {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  min-width: 160px;
+  justify-content: center;
+  border: 1px solid #ffe4e8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.report-period:hover {
+  background: #fff0f6;
+  transform: translateY(-1px);
+}
+.period-icon {
+  font-size: 1.2rem;
+  color: #e91e63;
+}
+
+/* ── Date picker modal (same as Report) ── */
+ion-modal.date-picker-modal-wrapper {
+  --background: rgba(0, 0, 0, 0.4);
+}
+.date-picker-modal {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  width: 90%;
+  max-width: 340px;
+  margin: auto;
+  box-shadow: 0 10px 40px rgba(233, 30, 99, 0.3);
+  border: 2px solid #ffe4e8;
+}
+.picker-title {
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 24px;
+  text-align: center;
+}
+.picker-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.picker-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.picker-select {
+  background: transparent;
+  border: none;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 500;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 8px 0;
+}
+.picker-select option {
+  background: #ffffff;
+  color: #333;
+}
+.picker-underline {
+  height: 2px;
+  background: #ffe4e8;
+  width: 100%;
+}
+.picker-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.picker-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.picker-btn-cancel {
+  background: #f0f0f0;
+  color: #666;
+  border: 1px solid #e0e0e0;
+}
+.picker-btn-ok {
+  background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.25);
+}
+.picker-btn-ok:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+}
+
+/* ── Main card ── */
+.dr-dash-card {
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #f0dce8;
+  padding: 20px 16px 18px;
+  box-shadow: 0 4px 20px rgba(233, 30, 99, 0.07);
+}
+.dr-dash-card-title {
+  margin: 0 0 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+/* ── Chart ── */
+.dr-chart-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.dr-chart-scroll {
+  overflow: hidden;
+  width: 100%;
+}
+.dr-chart-svg {
+  display: block;
+  overflow: visible;
+}
+.dr-chart-xlabels {
+  display: flex;
+  font-size: 0.85rem;
+  color: #7a6880;
+  padding-top: 8px;
+  font-weight: 600;
+}
+.dr-chart-xlabels span {
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+/* ── Legend ── */
+.dr-chart-legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 6px 0 8px;
+}
+.dr-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.88rem;
+  color: #555;
+  font-weight: 600;
+}
+.dr-legend-item i {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ── Stat cards ── */
+.dr-stat-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 8px;
+}
+.dr-stat-card {
+  background: #fff8fb;
+  border: 1px solid #f5dde8;
+  border-radius: 16px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.dr-stat-label {
+  font-size: 0.82rem;
+  color: #9a7090;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.dr-stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #e91e63;
+  line-height: 1.1;
+}
+.dr-stat-value small {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #b07090;
+}
+.dr-stat-sub {
+  font-size: 0.82rem;
+  color: #9a7090;
+}
+
+/* ── PC responsive layout ── */
+.dr-dash-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.dr-dash-sidebar {
+  width: 100%;
+}
+.dr-dash-main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Mobile-specific tweaks ── */
+@media (max-width: 767px) {
+  .dr-dash-content {
+    --padding-start: 12px;
+    --padding-end: 12px;
+    --padding-top: 10px;
+    --padding-bottom: 24px;
+  }
+
+  /* sidebar stacks vertically on mobile */
+  .dr-dash-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .dr-dash-patient-name {
+    margin-bottom: 0;
+  }
+
+  /* tabs take full width, 3 equal columns */
+  .report-mode-tabs {
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .report-mode-tabs button {
+    padding: 9px 0;
+    font-size: 0.83rem;
+  }
+
+  /* period selector centered, compact */
+  .report-period-selector {
+    margin-bottom: 0;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .report-period {
+    min-width: 0;
+    flex: 1;
+    max-width: 220px;
+    padding: 9px 12px;
+    font-size: 0.92rem;
+  }
+
+  .period-nav-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 1.3rem;
+  }
+
+  .dr-dash-card {
+    padding: 14px 12px 12px;
+    border-radius: 16px;
+  }
+
+  .dr-dash-card-title {
+    font-size: 0.95rem;
+    margin: 0 0 10px;
+  }
+
+  .dr-stat-card {
+    padding: 13px 12px;
+  }
+
+  .dr-chart-legend {
+    gap: 10px;
+    padding: 4px 0 6px;
+  }
+}
+
+@media (max-width: 380px) {
+  .dr-stat-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .dr-dash-inner {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .dr-dash-sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 16px;
+  }
+  .report-mode-tabs {
+    flex-direction: column;
+  }
+  .report-mode-tabs button {
+    text-align: left;
+    padding: 12px 16px;
+    border-radius: 10px;
+    justify-content: flex-start;
+  }
+  .report-period-selector {
+    margin-top: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dr-dash-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}

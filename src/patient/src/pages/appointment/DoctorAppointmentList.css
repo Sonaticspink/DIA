@@ -1,0 +1,57 @@
+.doctor-list-header {
+    --background: #fbc6e3; /* Light pink background */
+}
+
+.header-pink-badge {
+    background: #ff70c1;
+    color: white;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.appt-row-card {
+    background: #ffe4f1; /* Card pink color */
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: background 0.2s;
+}
+
+.appt-row-card:active {
+    background: #f8cde2; /* Visual feedback on click */
+}
+
+.vertical-divider {
+    width: 1.5px;
+    height: 35px;
+    background: #000;
+    margin: 0 20px;
+}
+
+.date-col, .time-col {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.list-arrow {
+    position: absolute;
+    right: 15px;
+    font-size: 1.2rem;
+    color: #000;
+}
+
+.status-section-label {
+    background: #ffb7df;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
