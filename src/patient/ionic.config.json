@@ -1,7 +1,0 @@
-{
-  "name": "Mongkol",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "react"
-}

@@ -126,10 +126,10 @@ const PatientList: React.FC = () => {
           onIonInput={(e: any) => handleSearch(e.target.value)}
         />
 
-        <IonSegment
-          value={sortType}
-          onIonChange={(e) => changeSort(e.detail.value!)}
-        >
+          <IonSegment
+            value={sortType}
+            onIonChange={(e) => changeSort(e.detail.value?.toString() || "az")} 
+          >
 
           <IonSegmentButton value="az">
             <IonIcon icon={textOutline} />
