@@ -15,7 +15,7 @@ const AppointmentDetail: React.FC = () => {
   const [bookedSlots, setBookedSlots] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const hardcodedSlots = ['09:00:00', '09:30:00', '10:00:00', '10:30:00', '11:00:00', '11:30:00','13:00:00', '13:30:00', '14:00:00', '14:30:00', '15:00:00', '15:30:00'];
+  const hardcodedSlots = ['09:00:00', '09:30:00', '10:00:00', '10:30:00', '11:00:00', '11:30:00','13:00:00', '13:30:00', '14:00:00', '14:30:00', '15:00:00', '15:30:00', '16:00:00', '16:30:00', '17:00:00', '17:30:00', '18:00:00', '18:30:00', '19:00:00', '19:30:00'];
 
   // This hook runs every time you enter the page, fixing the "second time" update bug
   useIonViewWillEnter(() => {

@@ -64,3 +64,55 @@
 .card-danger{
   background:#f48091;
 }
+
+/* Filter Buttons */
+.filter-grid {
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.filter-btn {
+  --padding-start: 2px;
+  --padding-end: 2px;
+  font-size: 20px;
+  font-weight: bold;
+  --border-radius: 10px;
+  margin: 0;
+  height: 45px;
+  --box-shadow: none;
+  opacity: 0.4; /* ปุ่มที่ไม่ได้เลือกจะจางลง */
+  transition: 0.3s;
+}
+
+.filter-btn.active {
+  opacity: 1; /* ปุ่มที่เลือกจะสว่าง */
+  transform: scale(1.00);
+  --box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-yellow {
+  --background: #ffc409;
+  --color: #000;
+}
+
+.btn-green {
+  --background: #2dd36f;
+  --color: #fff;
+}
+
+.btn-red {
+  --background: #eb445a;
+  --color: #fff;
+}
+
+/* Card Styles ตามสถานะ */
+.card-pending { border-left: 5px solid #ffc409; }
+.card-success { border-left: 5px solid #2dd36f; }
+.card-danger { border-left: 5px solid #eb445a; }
+
+.no-data {
+  text-align: center;
+  margin-top: 50px;
+  color: #666;
+  font-style: italic;
+}

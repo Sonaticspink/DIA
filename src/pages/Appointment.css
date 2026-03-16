@@ -13,11 +13,13 @@
 /* Container to help the calendar stand out */
 .calendar-container {
     display: flex;
-    justify-content: center;
-    padding: 20px 10px;
-    background: #FFDFEE; /* Light grey background to create contrast with the white calendar */
+    justify-content: center; /* จัดแนวนอนให้อยู่กลาง */
+    align-items: center;     /* จัดแนวตั้งให้อยู่กลาง (ถ้าจำเป็น) */
+    padding: 20px 0;         /* ปรับ padding ซ้ายขวาเป็น 0 */
+    background: #FFDFEE; 
     border-radius: 20px;
-    margin: 10px;
+    margin: 10px 0;          /* เปลี่ยน margin ซ้ายขวาเป็น 0 เพื่อให้ขยายเต็มความกว้าง */
+    width: 100%;
 }
 
 /* The actual Calendar Card */
@@ -131,4 +133,58 @@
 
 .Appointment-content {
     --background: #FFDFEE;
+}
+
+/* จัดกลุ่มเนื้อหาให้อยู่กึ่งกลางหน้าจอ */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* ปรับปรุง Container ปฏิทิน */
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    background: #FFDFEE; 
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+/* ส่วนของข้อความแนะนำ */
+.hint-text {
+    color: #b70089;
+    font-size: 1.3rem;
+    margin: 15px 0;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* ส่วนของปุ่ม Action ด้านล่าง */
+.action-container {
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 10px;
+}
+
+.view-list-btn {
+    --background: #ff69b4;
+    --background-activated: #a0006d;
+    --border-radius: 15px;
+    --box-shadow: 0 4px 12px rgba(214, 51, 132, 0.3);
+    font-weight: bold;
+    font-size: 1.2rem;
+    height: 55px;
+    margin-top: 10px;
+}
+
+/* ปรับแต่ง Toolbar ให้ดูเข้ากัน */
+.dashboard-toolbar {
+    --background: #FEC5E5;
 }
