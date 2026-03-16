@@ -50,7 +50,7 @@ const Appointment: React.FC = () => {
               onClick={() => history.push('/appointment-list')}
             >
               <IonIcon icon={listOutline} slot="start" />
-              ดูรายการนัดหมายทั้งหมด
+              ดูรายการนัดหมายของท่าน
             </IonButton>
           </div>
         <div className="main-container">

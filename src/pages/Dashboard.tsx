@@ -49,7 +49,7 @@ const Dashboard: React.FC = () => {
 
           <IonButton routerLink="/appointment" expand="block" className="dash-button">
             <IonIcon slot="start" icon={calendar} />
-            การนัดหมาย
+            จองคิวนัดหมอ
           </IonButton>
 
           <IonButton expand="block" className="dash-button" onClick={() => history.push('/inventory')}>
